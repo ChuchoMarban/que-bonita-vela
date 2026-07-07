@@ -311,6 +311,13 @@
   .co-consent label { font-size: 12px; color: var(--gray-mid); line-height: 1.5; }
   .co-consent a { color: var(--black); cursor: pointer; }
 
+  .nav-search-bar { display: flex; border: 1px solid var(--gray-border); border-radius: 4px; overflow: hidden; transition: border-color 0.2s; }
+  .nav-search-bar:focus-within { border-color: var(--black); }
+  .nav-search-bar input { border: none; padding: 8px 12px; font-family: var(--font-sans); font-size: 13px; color: var(--black); outline: none; width: 220px; background: transparent; }
+  .nav-search-bar input::placeholder { color: var(--gray-light); }
+  .nav-search-bar button { background: var(--black); color: var(--white); border: none; padding: 8px 12px; cursor: pointer; font-size: 13px; transition: opacity 0.2s; }
+  .nav-search-bar button:hover { opacity: 0.8; }
+
   /* SEARCH BAR */
   .search-bar-wrap { padding: 24px 5% 0; display: flex; justify-content: center; }
   .search-bar { display: flex; width: 100%; max-width: 600px; border: 1.5px solid var(--gray-border); border-radius: 4px; overflow: hidden; transition: border-color 0.2s; background: var(--white); }
@@ -359,10 +366,12 @@
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-right">
-    <span style="font-size:12px;color:var(--gray-mid);border:1px solid var(--gray-border);padding:7px 12px;border-radius:4px;white-space:nowrap;">🚚 Envíos a todo México</span>
+    <div class="nav-search-bar">
+      <input type="text" id="navSearchInput" placeholder="🔍 Buscar productos..." oninput="navSearch(this.value)" onkeydown="if(event.key==='Enter'){navSearch(this.value);document.getElementById('productos').scrollIntoView({behavior:'smooth'})}">
+      <button onclick="navSearch(document.getElementById('navSearchInput').value);document.getElementById('productos').scrollIntoView({behavior:'smooth'})">→</button>
+    </div>
     <button class="nav-cart-btn" onclick="openCart()">
-      🛒 Carrito
-      <span class="cart-count hidden" id="cartCount">0</span>
+      🛒 <span class="cart-count hidden" id="cartCount">0</span>
     </button>
     <a class="nav-cta" href="https://wa.me/524434929560?text=Hola,%20vi%20su%20página" target="_blank">WhatsApp</a>
   </div>
@@ -379,12 +388,8 @@
       <button class="btn-outline" onclick="openCart()">🛒 Mi carrito</button>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-visual-inner">
-      <span class="hero-big-emoji">🕯️</span>
-      <p class="hero-visual-label">Que Bonita Vela</p>
-    </div>
-    <div class="hero-tag">Envíos a todo México 🇲🇽</div>
+  <div class="hero-visual" style="padding:0;background:#1a1008;">
+    <img src="artesana.png" alt="Artesana Que Bonita Vela" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
   </div>
 </section>
 
@@ -1291,6 +1296,13 @@ function searchProducts(query) {
     </div>
   `).join('');
   countEl.textContent = `${filtered.length} producto${filtered.length !== 1 ? 's' : ''} encontrado${filtered.length !== 1 ? 's' : ''}`;
+}
+
+function navSearch(query) {
+  // Sync with main search bar
+  const mainInput = document.getElementById('searchInput');
+  if (mainInput) mainInput.value = query;
+  searchProducts(query);
 }
 
 // INIT
