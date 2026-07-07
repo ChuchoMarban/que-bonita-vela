@@ -311,6 +311,18 @@
   .co-consent label { font-size: 12px; color: var(--gray-mid); line-height: 1.5; }
   .co-consent a { color: var(--black); cursor: pointer; }
 
+  /* SEARCH BAR */
+  .search-bar-wrap { padding: 24px 5% 0; display: flex; justify-content: center; }
+  .search-bar { display: flex; width: 100%; max-width: 600px; border: 1.5px solid var(--gray-border); border-radius: 4px; overflow: hidden; transition: border-color 0.2s; background: var(--white); }
+  .search-bar:focus-within { border-color: var(--black); }
+  .search-bar input { flex: 1; border: none; padding: 13px 16px; font-family: var(--font-sans); font-size: 14px; color: var(--black); outline: none; background: transparent; }
+  .search-bar input::placeholder { color: var(--gray-light); }
+  .search-bar button { background: var(--black); color: var(--white); border: none; padding: 13px 20px; cursor: pointer; font-size: 16px; transition: opacity 0.2s; }
+  .search-bar button:hover { opacity: 0.8; }
+  .search-results-count { text-align: center; font-size: 12px; color: var(--gray-mid); margin-top: 10px; letter-spacing: 0.5px; }
+  .no-results { text-align: center; padding: 48px 20px; color: var(--gray-mid); }
+  .no-results span { font-size: 40px; display: block; margin-bottom: 12px; }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -337,7 +349,9 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">Que <span>Bonita</span> Vela</a>
+  <a class="nav-logo" href="#">
+    <img src="logo.jpeg" alt="Que Bonita Vela" style="height:44px;width:auto;display:block;">
+  </a>
   <ul class="nav-links">
     <li><a href="#productos">Productos</a></li>
     <li><a href="#categorias">Categorías</a></li>
@@ -345,11 +359,12 @@
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-right">
+    <span style="font-size:12px;color:var(--gray-mid);border:1px solid var(--gray-border);padding:7px 12px;border-radius:4px;white-space:nowrap;">🚚 Envíos a todo México</span>
     <button class="nav-cart-btn" onclick="openCart()">
       🛒 Carrito
       <span class="cart-count hidden" id="cartCount">0</span>
     </button>
-    <a class="nav-cta" href="https://wa.me/521TUNUMERO?text=Hola,%20vi%20su%20página" target="_blank">WhatsApp</a>
+    <a class="nav-cta" href="https://wa.me/524434929560?text=Hola,%20vi%20su%20página" target="_blank">WhatsApp</a>
   </div>
 </nav>
 
@@ -432,7 +447,7 @@
     ⚡ <strong style="color:#aaa;">¿Cómo funciona?</strong><br>
     Escríbenos por WhatsApp con tu idea — nombre, texto o manda tu logo — y nosotros nos encargamos del resto. Cotización sin costo y sin compromiso.
   </div>
-  <a href="https://wa.me/521TUNUMERO?text=Hola!%20Me%20interesa%20personalizar%20un%20producto%20con%20mi%20nombre%20/%20logo%20/%20dedicatoria" target="_blank"
+  <a href="https://wa.me/524434929560?text=Hola!%20Me%20interesa%20personalizar%20un%20producto%20con%20mi%20nombre%20/%20logo%20/%20dedicatoria" target="_blank"
     style="display:inline-block;background:#fff;color:#111;padding:15px 36px;border-radius:4px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;transition:opacity 0.2s;"
     onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
     💬 Pregunta por tu personalización →
@@ -448,6 +463,16 @@
     </div>
     <a class="section-link" href="#contacto">Ver todo →</a>
   </div>
+  <div class="search-bar-wrap">
+    <div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="🔍 Busca por nombre, material o categoría... ej: vela, madera, suculenta" oninput="searchProducts(this.value)">
+        <button onclick="searchProducts(document.getElementById('searchInput').value)">🔍</button>
+      </div>
+      <p class="search-results-count" id="searchCount"></p>
+    </div>
+  </div>
+
   <div class="product-filter">
     <button class="filter-btn active" onclick="filterProducts('all',this)">Todos</button>
     <button class="filter-btn" onclick="filterProducts('velas',this)">Velas</button>
@@ -521,9 +546,9 @@
     <div>
       <div class="usp-visual">🏭
         <div class="usp-stat">
-          <div class="usp-stat-item"><span class="usp-stat-num">100+</span><span class="usp-stat-label">Productos</span></div>
-          <div class="usp-stat-item"><span class="usp-stat-num">500+</span><span class="usp-stat-label">Clientes</span></div>
-          <div class="usp-stat-item"><span class="usp-stat-num">100%</span><span class="usp-stat-label">Artesanal</span></div>
+          <div class="usp-stat-item"><span class="usp-stat-num">1000+</span><span class="usp-stat-label" style="font-size:21px;">Productos</span></div>
+          <div class="usp-stat-item"><span class="usp-stat-num">500+</span><span class="usp-stat-label" style="font-size:21px;">Clientes satisfechos</span></div>
+          <div class="usp-stat-item"><span class="usp-stat-num">100%</span><span class="usp-stat-label" style="font-size:21px;color:red;">Artesanal</span></div>
         </div>
       </div>
     </div>
@@ -552,7 +577,7 @@
       <h2>¿Te gustó algo?<br><em>Escríbenos</em></h2>
       <p>Respondemos rápido por WhatsApp. También puedes enviarnos un mensaje aquí y te contactamos en menos de 24 horas.</p>
       <div class="contact-channels">
-        <a class="contact-channel" href="https://wa.me/521TUNUMERO?text=Hola,%20quiero%20hacer%20un%20pedido" target="_blank">
+        <a class="contact-channel" href="https://wa.me/524434929560?text=Hola,%20quiero%20hacer%20un%20pedido" target="_blank">
           <span class="ch-icon">💬</span><div><div class="ch-label">WhatsApp</div><div class="ch-value">Respuesta inmediata</div></div>
         </a>
         <a class="contact-channel" href="https://instagram.com/que.bonita.vela" target="_blank">
@@ -583,7 +608,7 @@
 <footer class="footer-full">
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-logo" style="font-family:'DM Serif Display',serif;font-size:20px;">Que <em style="font-style:italic">Bonita</em> Vela</div>
+      <img src="logo.jpeg" alt="Que Bonita Vela" style="height:64px;width:auto;display:block;margin-bottom:10px;">
       <p>Artesanía hecha con amor en México. Corte láser, velas, madera, cemento y mucho más.</p>
     </div>
     <div class="footer-col">
@@ -594,7 +619,7 @@
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
-      <a href="https://wa.me/521TUNUMERO" target="_blank">WhatsApp</a>
+      <a href="https://wa.me/524434929560" target="_blank">WhatsApp</a>
       <a href="https://instagram.com/que.bonita.vela" target="_blank">Instagram</a>
     </div>
     <div class="footer-col">
@@ -606,7 +631,10 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-bottom-copy">© 2026 Que Bonita Vela · Todos los derechos reservados · Hecho con ❤️ en México</span>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <img src="logo.jpeg" alt="Que Bonita Vela" style="height:36px;width:auto;display:block;">
+      <span style="font-size:12px;color:var(--gray-light);">© 2026 · Todos los derechos reservados</span>
+    </div>
     <div class="footer-bottom-links">
       <button onclick="openPrivacy('aviso')">Privacidad</button>
       <button onclick="openPrivacy('terminos')">Términos</button>
@@ -616,7 +644,7 @@
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a class="wa-float" href="https://wa.me/521TUNUMERO?text=Hola,%20vi%20su%20página" target="_blank">💬</a>
+<a class="wa-float" href="https://wa.me/524434929560?text=Hola,%20vi%20su%20página" target="_blank">💬</a>
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
@@ -970,7 +998,7 @@ function renderCheckoutStep() {
         <span class="success-icon">🎉</span>
         <h3>¡Gracias, ${customerData.nombre}!</h3>
         <p>Tu pedido ha sido recibido. Te contactaremos pronto al número <strong>${customerData.tel}</strong> para confirmar el pago y la fecha de envío.</p>
-        <a class="success-wa" href="https://wa.me/521TUNUMERO?text=${encodeURIComponent(waMsg)}" target="_blank">💬 Confirmar por WhatsApp</a>
+        <a class="success-wa" href="https://wa.me/524434929560?text=${encodeURIComponent(waMsg)}" target="_blank">💬 Confirmar por WhatsApp</a>
         <br><br>
         <button class="co-btn-back" style="width:100%" onclick="cart=[];updateCartCount();renderCartItems();closeCheckout()">Seguir comprando</button>
       </div>`;
@@ -1005,14 +1033,14 @@ function orderByWA() {
   if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
   const items = cart.map(i => `• ${i.emoji} ${i.name} x${i.qty} (${fmt(i.price*i.qty)})`).join('\n');
   const msg = `¡Hola! Quiero hacer este pedido:\n\n${items}\n\nTotal: ${fmt(cartTotal())}`;
-  window.open(`https://wa.me/521TUNUMERO?text=${encodeURIComponent(msg)}`, '_blank');
+  window.open(`https://wa.me/524434929560?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 function sendWA() {
   const nombre = document.getElementById('ctaNombre').value || 'Cliente';
   const producto = document.getElementById('ctaProd').value || 'un producto';
   const msg = document.getElementById('ctaMsg').value || '';
-  window.open(`https://wa.me/521TUNUMERO?text=${encodeURIComponent(`Hola! Soy ${nombre}. Me interesa: ${producto}. ${msg}`)}`, '_blank');
+  window.open(`https://wa.me/524434929560?text=${encodeURIComponent(`Hola! Soy ${nombre}. Me interesa: ${producto}. ${msg}`)}`, '_blank');
 }
 
 // ── PRIVACY & COOKIES ──
@@ -1222,6 +1250,47 @@ function goStep2() {
     return;
   }
   _origGoStep2();
+}
+
+function searchProducts(query) {
+  const q = query.trim().toLowerCase();
+  const countEl = document.getElementById('searchCount');
+  // Reset filters visually
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn')[0].classList.add('active');
+  if (!q) {
+    renderProducts('all');
+    countEl.textContent = '';
+    return;
+  }
+  const keywords = q.split(' ').filter(Boolean);
+  const filtered = products.filter(p => {
+    const haystack = `${p.name} ${p.cat} ${p.desc} ${p.badge}`.toLowerCase();
+    return keywords.every(k => haystack.includes(k));
+  });
+  const grid = document.getElementById('productGrid');
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="no-results" style="grid-column:1/-1"><span>🔍</span>No encontramos productos para "<strong>${query}</strong>".<br>Intenta con otra palabra o <a href="#contacto" style="color:var(--black)">escríbenos</a> y te ayudamos.</div>`;
+    countEl.textContent = 'Sin resultados';
+    return;
+  }
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-inner">${p.emoji}</div>
+        ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+      </div>
+      <div class="product-info">
+        <p class="product-cat">${p.cat}</p>
+        <p class="product-name">${p.name}</p>
+        <div class="product-footer">
+          <span class="product-price">${fmt(p.price)}</span>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart(${p.id}, this)">+ Agregar al carrito</button>
+      </div>
+    </div>
+  `).join('');
+  countEl.textContent = `${filtered.length} producto${filtered.length !== 1 ? 's' : ''} encontrado${filtered.length !== 1 ? 's' : ''}`;
 }
 
 // INIT
