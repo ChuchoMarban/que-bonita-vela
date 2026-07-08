@@ -3,393 +3,450 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Que Bonita Vela — Artesanía & Corte Láser</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<title>Que Bonita Vela | Velas artesanales, regalos personalizados y corte láser</title>
+<meta name="description" content="Velas artesanales, regalos personalizados, detalles para eventos, decoración y productos en MDF hechos con amor en Michoacán. Cotiza tu pedido personalizado por WhatsApp.">
+<meta name="keywords" content="velas artesanales, regalos personalizados, detalles para eventos, decoración artesanal, corte láser, productos MDF personalizados, velas decorativas, regalos hechos a mano, Michoacán">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --black: #111; --gray-dark: #444; --gray-mid: #888;
-    --gray-light: #ccc; --gray-border: #e8e8e8; --gray-bg: #f5f5f5;
-    --white: #fff; --green: #25D366;
-    --font-sans: 'DM Sans', sans-serif; --font-serif: 'DM Serif Display', serif;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--font-sans); color: var(--black); background: var(--white); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#fdf8f2;--beige:#f5ece0;--beige2:#eddcc8;--brown:#7a5c3e;--brown-dark:#4a3526;--brown-light:#c4956a;
+  --terra:#c17f5a;--gold:#b8860b;--gold-light:#d4a843;--white:#fff;--text:#3d2b1f;--text-mid:#7a5c3e;
+  --text-light:#b09880;--border:#e8d9c8;--gray-bg:#f9f4ee;
+  --font-serif:'Cormorant Garamond',serif;--font-sans:'Jost',sans-serif;
+  --green-wa:#25D366;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--text);background:var(--cream);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 
-  /* NAV */
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-border); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; }
-  .nav-logo { font-family: var(--font-serif); font-size: 20px; color: var(--black); text-decoration: none; }
-  .nav-logo span { font-style: italic; }
-  .nav-links { display: flex; gap: 28px; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--gray-mid); font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--black); }
-  .nav-right { display: flex; gap: 10px; align-items: center; }
-  .nav-cart-btn { position: relative; background: none; border: 1px solid var(--gray-border); border-radius: 4px; padding: 8px 14px; cursor: pointer; font-family: var(--font-sans); font-size: 13px; display: flex; align-items: center; gap: 6px; transition: border-color 0.2s; }
-  .nav-cart-btn:hover { border-color: var(--black); }
-  .cart-count { background: var(--black); color: var(--white); border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
-  .cart-count.hidden { display: none; }
-  .nav-cta { background: var(--black); color: var(--white); font-size: 13px; font-weight: 500; padding: 10px 18px; border-radius: 4px; text-decoration: none; letter-spacing: 0.5px; transition: opacity 0.2s; white-space: nowrap; }
-  .nav-cta:hover { opacity: 0.8; }
+/* ── UTILS ── */
+.serif{font-family:var(--font-serif)}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 5%}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;font-family:var(--font-sans);font-size:13px;font-weight:500;letter-spacing:.5px;text-decoration:none;border:none;cursor:pointer;transition:all .22s;white-space:nowrap}
+.btn-primary{background:var(--brown-dark);color:var(--white)}
+.btn-primary:hover{background:var(--brown);transform:translateY(-1px);box-shadow:0 4px 14px rgba(74,53,38,.25)}
+.btn-gold{background:var(--gold-light);color:var(--white)}
+.btn-gold:hover{background:var(--gold);transform:translateY(-1px)}
+.btn-outline{border:1.5px solid var(--brown-dark);color:var(--brown-dark);background:transparent}
+.btn-outline:hover{background:var(--brown-dark);color:var(--white)}
+.btn-wa{background:var(--green-wa);color:var(--white)}
+.btn-wa:hover{opacity:.9;transform:translateY(-1px)}
+.section-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--terra);font-weight:500;margin-bottom:12px;display:block}
+.section-title{font-family:var(--font-serif);font-size:clamp(28px,4vw,46px);line-height:1.1;color:var(--brown-dark);margin-bottom:20px}
+.section-title em{font-style:italic;color:var(--terra)}
+.divider{width:48px;height:2px;background:var(--gold-light);margin:0 auto 24px;border-radius:2px}
 
-  /* HERO */
-  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 64px); border-bottom: 1px solid var(--gray-border); }
-  .hero-content { display: flex; flex-direction: column; justify-content: center; padding: 80px 5% 80px 8%; }
-  .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 24px; }
-  .hero-title { font-family: var(--font-serif); font-size: clamp(42px, 5vw, 72px); line-height: 1.05; letter-spacing: -1px; margin-bottom: 24px; }
-  .hero-title em { font-style: italic; }
-  .hero-desc { font-size: 16px; color: var(--gray-dark); max-width: 380px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; }
-  .hero-actions { display: flex; gap: 12px; align-items: center; }
-  .btn-primary { background: var(--black); color: var(--white); padding: 14px 28px; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: opacity 0.2s; border: none; cursor: pointer; font-family: var(--font-sans); }
-  .btn-primary:hover { opacity: 0.8; }
-  .btn-outline { border: 1px solid var(--gray-border); color: var(--black); padding: 14px 28px; border-radius: 4px; text-decoration: none; font-size: 14px; transition: border-color 0.2s; cursor: pointer; background: none; font-family: var(--font-sans); }
-  .btn-outline:hover { border-color: var(--black); }
-  .hero-visual { background: var(--gray-bg); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .hero-visual-inner { text-align: center; }
-  .hero-big-emoji { font-size: 120px; line-height: 1; display: block; margin-bottom: 16px; }
-  .hero-visual-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-light); }
-  .hero-tag { position: absolute; top: 32px; right: 32px; background: var(--white); border: 1px solid var(--gray-border); border-radius: 4px; padding: 8px 14px; font-size: 12px; color: var(--gray-dark); }
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(253,248,242,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 5%}
+.nav-logo img{height:48px;width:auto;display:block}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text-mid);font-size:13px;letter-spacing:.5px;text-transform:uppercase;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--brown-dark)}
+.nav-right{display:flex;gap:8px;align-items:center}
+.nav-search-bar{display:flex;border:1px solid var(--border);border-radius:50px;overflow:hidden;background:var(--white)}
+.nav-search-bar:focus-within{border-color:var(--brown)}
+.nav-search-bar input{border:none;padding:7px 14px;font-family:var(--font-sans);font-size:12px;color:var(--text);outline:none;width:180px;background:transparent}
+.nav-search-bar input::placeholder{color:var(--text-light)}
+.nav-search-bar button{background:var(--brown-dark);color:var(--white);border:none;padding:7px 13px;cursor:pointer;font-size:12px;transition:opacity .2s}
+.nav-search-bar button:hover{opacity:.85}
+.nav-cart-btn{position:relative;background:none;border:1.5px solid var(--border);border-radius:50px;padding:7px 14px;cursor:pointer;font-family:var(--font-sans);font-size:13px;display:flex;align-items:center;gap:6px;color:var(--text);transition:border-color .2s}
+.nav-cart-btn:hover{border-color:var(--brown-dark)}
+.cart-count{background:var(--terra);color:var(--white);border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.cart-count.hidden{display:none}
+.nav-cta-wa{background:var(--green-wa);color:var(--white);border-radius:50px;padding:8px 16px;font-size:12px;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:5px;transition:opacity .2s}
+.nav-cta-wa:hover{opacity:.9}
+.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;font-size:22px;color:var(--brown-dark)}
 
-  /* MARQUEE */
-  .marquee-strip { border-top: 1px solid var(--gray-border); border-bottom: 1px solid var(--gray-border); padding: 14px 0; overflow: hidden; }
-  .marquee-track { display: flex; gap: 48px; width: max-content; animation: marquee 25s linear infinite; }
-  .marquee-item { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); white-space: nowrap; display: flex; align-items: center; gap: 14px; }
-  .marquee-item::after { content: '✦'; color: var(--gray-light); }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* ── HERO ── */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);background:var(--cream)}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:80px 5% 80px 8%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--beige);border:1px solid var(--beige2);border-radius:50px;padding:6px 16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--brown);margin-bottom:28px;width:fit-content}
+.hero-title{font-family:var(--font-serif);font-size:clamp(36px,5vw,64px);line-height:1.05;color:var(--brown-dark);margin-bottom:20px;letter-spacing:-.5px}
+.hero-title em{font-style:italic;color:var(--terra)}
+.hero-subtitle{font-size:16px;color:var(--text-mid);max-width:420px;line-height:1.75;margin-bottom:36px;font-weight:300}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stats{display:flex;gap:28px;padding-top:28px;border-top:1px solid var(--border)}
+.hero-stat-num{font-family:var(--font-serif);font-size:28px;color:var(--brown-dark);display:block;line-height:1}
+.hero-stat-label{font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.hero-visual{position:relative;overflow:hidden}
+.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.hero-visual-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(253,248,242,.3) 0%,transparent 60%)}
+.hero-tag{position:absolute;bottom:28px;left:28px;background:rgba(253,248,242,.95);border:1px solid var(--border);border-radius:12px;padding:12px 18px;font-size:12px;color:var(--brown)}
+.hero-tag strong{display:block;font-size:14px;color:var(--brown-dark);margin-bottom:2px}
 
-  /* SECTIONS */
-  section { padding: 80px 5%; }
-  .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; border-bottom: 1px solid var(--gray-border); padding-bottom: 24px; }
-  .section-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 8px; }
-  .section-title { font-family: var(--font-serif); font-size: clamp(28px, 3vw, 42px); line-height: 1.1; }
-  .section-link { font-size: 13px; color: var(--gray-mid); text-decoration: none; }
-  .section-link:hover { color: var(--black); }
+/* ── MARQUEE ── */
+.marquee-strip{background:var(--brown-dark);padding:13px 0;overflow:hidden}
+.marquee-track{display:flex;gap:40px;width:max-content;animation:marquee 28s linear infinite}
+.marquee-item{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap;display:flex;align-items:center;gap:14px}
+.marquee-item::after{content:'✦';color:var(--gold-light)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  /* PRODUCTS */
-  .product-filter { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
-  .filter-btn { font-size: 12px; padding: 7px 16px; border: 1px solid var(--gray-border); border-radius: 20px; background: none; color: var(--gray-mid); cursor: pointer; transition: all 0.2s; font-family: var(--font-sans); }
-  .filter-btn.active, .filter-btn:hover { background: var(--black); color: var(--white); border-color: var(--black); }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2px; }
-  .product-card { background: var(--white); border: 1px solid var(--gray-border); transition: border-color 0.2s; position: relative; overflow: hidden; }
-  .product-card:hover { border-color: var(--black); }
-  .product-card:hover .product-img-inner { transform: scale(1.04); }
-  .product-img { aspect-ratio: 1; background: var(--gray-bg); overflow: hidden; position: relative; }
-  .product-img-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 56px; transition: transform 0.4s ease; }
-  .product-badge { position: absolute; top: 12px; left: 12px; background: var(--black); color: var(--white); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 4px 8px; border-radius: 2px; }
-  .product-info { padding: 16px; }
-  .product-cat { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 4px; }
-  .product-name { font-size: 14px; font-weight: 500; margin-bottom: 8px; line-height: 1.3; }
-  .product-footer { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-  .product-price { font-family: var(--font-serif); font-size: 18px; }
-  .add-to-cart-btn { width: 100%; background: var(--black); color: var(--white); border: none; padding: 10px; font-size: 12px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); letter-spacing: 0.5px; border-radius: 3px; transition: opacity 0.2s; }
-  .add-to-cart-btn:hover { opacity: 0.8; }
-  .add-to-cart-btn.added { background: #2d7a2d; }
+/* ── TRUST STRIP ── */
+.trust-strip{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 5%}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.trust-item{text-align:center;padding:16px}
+.trust-icon{font-size:28px;margin-bottom:10px;display:block}
+.trust-title{font-size:13px;font-weight:600;color:var(--brown-dark);margin-bottom:4px}
+.trust-desc{font-size:12px;color:var(--text-light);line-height:1.5}
 
-  /* CATEGORIES */
-  .cat-section { background: var(--gray-bg); }
-  .cat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
-  .cat-card { background: var(--white); padding: 40px 32px; border: 1px solid var(--gray-border); transition: background 0.2s; cursor: pointer; text-decoration: none; color: var(--black); display: block; }
-  .cat-card:hover { background: var(--black); color: var(--white); }
-  .cat-card:hover .cat-desc { color: #aaa; }
-  .cat-icon { font-size: 32px; margin-bottom: 20px; display: block; }
-  .cat-name { font-family: var(--font-serif); font-size: 22px; margin-bottom: 8px; }
-  .cat-desc { font-size: 13px; color: var(--gray-mid); line-height: 1.5; transition: color 0.2s; }
-  .cat-arrow { display: block; margin-top: 24px; font-size: 20px; }
+/* ── PERSONALIZACIÓN ── */
+.personalizacion-section{background:linear-gradient(135deg,var(--brown-dark) 0%,#2e1a0e 100%);padding:80px 5%;position:relative;overflow:hidden}
+.personalizacion-section::before{content:'';position:absolute;top:-40px;right:-40px;width:300px;height:300px;border-radius:50%;background:rgba(212,168,67,.07);pointer-events:none}
+.personalizacion-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto}
+.personalizacion-text .section-label{color:var(--gold-light)}
+.personalizacion-text .section-title{color:var(--white)}
+.personalizacion-text .section-title em{color:var(--gold-light)}
+.personalizacion-text p{color:rgba(255,255,255,.7);line-height:1.8;font-weight:300;margin-bottom:32px;font-size:15px}
+.personalizacion-items{display:flex;flex-direction:column;gap:12px}
+.personalizacion-item{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px}
+.personalizacion-item-icon{font-size:22px;flex-shrink:0}
+.personalizacion-item-text{font-size:13px;color:rgba(255,255,255,.85)}
 
-  /* USP */
-  .usp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .usp-text h2 { font-family: var(--font-serif); font-size: clamp(28px,3vw,48px); line-height: 1.1; margin-bottom: 24px; }
-  .usp-text h2 em { font-style: italic; }
-  .usp-text p { color: var(--gray-dark); line-height: 1.8; font-weight: 300; margin-bottom: 32px; }
-  .usp-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-  .usp-list li { display: flex; gap: 12px; align-items: flex-start; }
-  .usp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--black); margin-top: 8px; flex-shrink: 0; }
-  .usp-list span { font-size: 14px; color: var(--gray-dark); line-height: 1.6; }
-  .usp-visual { background: var(--gray-bg); border: 1px solid var(--gray-border); aspect-ratio: 0.85; display: flex; align-items: center; justify-content: center; font-size: 80px; position: relative; }
-  .usp-stat { position: absolute; bottom: 24px; left: 24px; right: 24px; background: var(--white); border: 1px solid var(--gray-border); padding: 16px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-  .usp-stat-item { text-align: center; }
-  .usp-stat-num { font-family: var(--font-serif); font-size: 24px; display: block; }
-  .usp-stat-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-mid); }
+/* ── PRODUCTOS ── */
+.productos-section{padding:80px 0}
+.productos-header{padding:0 5%;margin-bottom:36px}
+.product-filter{display:flex;gap:8px;flex-wrap:wrap;padding:0 5%;margin-bottom:32px}
+.filter-btn{font-size:12px;padding:8px 18px;border:1.5px solid var(--border);border-radius:50px;background:var(--white);color:var(--text-mid);cursor:pointer;transition:all .2s;font-family:var(--font-sans);font-weight:400}
+.filter-btn.active,.filter-btn:hover{background:var(--brown-dark);color:var(--white);border-color:var(--brown-dark)}
+.search-bar-wrap{padding:0 5% 20px}
+.search-bar{display:flex;width:100%;max-width:520px;border:1.5px solid var(--border);border-radius:50px;overflow:hidden;background:var(--white)}
+.search-bar:focus-within{border-color:var(--brown)}
+.search-bar input{flex:1;border:none;padding:12px 18px;font-family:var(--font-sans);font-size:13px;color:var(--text);outline:none;background:transparent}
+.search-bar input::placeholder{color:var(--text-light)}
+.search-bar button{background:var(--brown-dark);color:var(--white);border:none;padding:12px 18px;cursor:pointer;font-size:14px;transition:opacity .2s}
+.search-bar button:hover{opacity:.85}
+.search-results-count{font-size:12px;color:var(--text-light);margin-top:8px;padding-left:18px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--border);padding:0 5%}
+.product-card{background:var(--white);cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.product-card:hover{box-shadow:0 8px 32px rgba(122,92,62,.12)}
+.product-card:hover .product-img-inner{transform:scale(1.06)}
+.product-img{aspect-ratio:1;background:var(--gray-bg);overflow:hidden;position:relative}
+.product-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:64px;transition:transform .4s ease}
+.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.product-badge{position:absolute;top:12px;left:12px;background:var(--terra);color:var(--white);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:50px}
+.product-info{padding:18px}
+.product-cat{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:5px}
+.product-name{font-family:var(--font-serif);font-size:17px;color:var(--brown-dark);margin-bottom:6px;line-height:1.3}
+.product-desc{font-size:12px;color:var(--text-light);line-height:1.5;margin-bottom:12px}
+.product-footer{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.product-price{font-family:var(--font-serif);font-size:20px;color:var(--terra)}
+.add-to-cart-btn{width:100%;background:var(--brown-dark);color:var(--white);border:none;padding:11px;font-size:12px;font-weight:500;cursor:pointer;font-family:var(--font-sans);letter-spacing:.5px;border-radius:8px;transition:all .2s}
+.add-to-cart-btn:hover{background:var(--brown);transform:translateY(-1px)}
+.add-to-cart-btn.added{background:#2d7a2d}
+.no-results{text-align:center;padding:48px 20px;color:var(--text-light);grid-column:1/-1}
+.no-results span{font-size:40px;display:block;margin-bottom:12px}
 
-  /* TESTIMONIALS */
-  .test-section { background: var(--black); color: var(--white); }
-  .test-section .section-title { color: var(--white); }
-  .test-section .section-eyebrow { color: #555; }
-  .test-section .section-header { border-color: #222; }
-  .test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
-  .test-card { background: #1a1a1a; padding: 32px; border: 1px solid #222; }
-  .test-stars { color: #888; font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
-  .test-text { font-size: 14px; color: #aaa; line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
-  .test-author { font-size: 13px; color: #555; }
-  .test-author strong { color: var(--white); display: block; font-weight: 500; }
+/* ── CATEGORÍAS ── */
+.cat-section{background:var(--beige);padding:80px 5%}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.cat-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px 28px;text-decoration:none;color:var(--text);transition:all .25s;display:block}
+.cat-card:hover{background:var(--brown-dark);color:var(--white);border-color:var(--brown-dark);transform:translateY(-3px);box-shadow:0 12px 32px rgba(74,53,38,.2)}
+.cat-card:hover .cat-desc{color:rgba(255,255,255,.6)}
+.cat-card:hover .cat-arrow{color:var(--gold-light)}
+.cat-icon{font-size:34px;margin-bottom:18px;display:block}
+.cat-name{font-family:var(--font-serif);font-size:21px;margin-bottom:8px}
+.cat-desc{font-size:13px;color:var(--text-light);line-height:1.6;transition:color .25s}
+.cat-arrow{display:block;margin-top:20px;font-size:18px;color:var(--terra);transition:color .25s}
 
-  /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-  .contact-info h2 { font-family: var(--font-serif); font-size: clamp(28px,3vw,42px); margin-bottom: 16px; }
-  .contact-info p { color: var(--gray-dark); line-height: 1.7; font-weight: 300; margin-bottom: 32px; }
-  .contact-channels { display: flex; flex-direction: column; gap: 16px; }
-  .contact-channel { display: flex; gap: 14px; align-items: center; padding: 16px; border: 1px solid var(--gray-border); border-radius: 4px; text-decoration: none; color: var(--black); transition: border-color 0.2s; }
-  .contact-channel:hover { border-color: var(--black); }
-  .ch-icon { font-size: 20px; width: 40px; text-align: center; }
-  .ch-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-mid); }
-  .ch-value { font-size: 14px; font-weight: 500; }
-  .contact-form { display: flex; flex-direction: column; gap: 16px; }
-  .form-field { display: flex; flex-direction: column; gap: 6px; }
-  .form-field label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-mid); }
-  .form-field input, .form-field textarea, .form-field select { border: 1px solid var(--gray-border); border-radius: 4px; padding: 12px 14px; font-family: var(--font-sans); font-size: 14px; color: var(--black); background: var(--white); transition: border-color 0.2s; resize: none; appearance: none; }
-  .form-field input:focus, .form-field textarea:focus, .form-field select:focus { outline: none; border-color: var(--black); }
-  .form-field textarea { height: 100px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-submit { background: var(--black); color: var(--white); border: none; padding: 14px; border-radius: 4px; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; cursor: pointer; font-family: var(--font-sans); transition: opacity 0.2s; }
-  .form-submit:hover { opacity: 0.8; }
+/* ── PROCESO ── */
+.proceso-section{padding:80px 5%;background:var(--white)}
+.proceso-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;position:relative}
+.proceso-grid::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:var(--border)}
+.proceso-step{text-align:center;padding:0 12px;position:relative}
+.proceso-num{width:56px;height:56px;border-radius:50%;background:var(--brown-dark);color:var(--white);font-family:var(--font-serif);font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
+.proceso-title{font-size:13px;font-weight:600;color:var(--brown-dark);margin-bottom:6px}
+.proceso-desc{font-size:12px;color:var(--text-light);line-height:1.5}
 
-  /* FOOTER */
-  footer { border-top: 1px solid var(--gray-border); padding: 40px 5%; display: flex; align-items: center; justify-content: space-between; }
-  .footer-logo { font-family: var(--font-serif); font-size: 18px; }
-  .footer-logo em { font-style: italic; }
-  .footer-copy { font-size: 12px; color: var(--gray-mid); }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { font-size: 12px; color: var(--gray-mid); text-decoration: none; }
-  .footer-links a:hover { color: var(--black); }
+/* ── EVENTOS ── */
+.eventos-section{background:linear-gradient(135deg,var(--beige) 0%,var(--beige2) 100%);padding:80px 5%;text-align:center}
+.eventos-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:28px 0 40px}
+.eventos-chip{background:var(--white);border:1px solid var(--border);border-radius:50px;padding:8px 18px;font-size:12px;color:var(--brown);font-weight:400}
 
-  /* WHATSAPP FLOAT */
-  .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: var(--green); color: var(--white); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transition: transform 0.2s; }
-  .wa-float:hover { transform: scale(1.08); }
+/* ── USP / NOSOTROS ── */
+.nosotros-section{padding:80px 5%;background:var(--cream)}
+.nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.nosotros-visual{position:relative}
+.nosotros-img-box{background:var(--beige);border:1px solid var(--border);border-radius:20px;aspect-ratio:.85;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden}
+.nosotros-stats{position:absolute;bottom:20px;left:20px;right:20px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat-item{text-align:center}
+.stat-num{font-family:var(--font-serif);font-size:26px;color:var(--brown-dark);display:block}
+.stat-label{font-size:11px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px}
+.nosotros-text .section-title{margin-bottom:16px}
+.nosotros-text p{color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:28px}
+.usp-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.usp-list li{display:flex;gap:12px;align-items:flex-start}
+.usp-dot{width:20px;height:20px;border-radius:50%;background:var(--beige);border:1.5px solid var(--terra);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;margin-top:2px}
+.usp-text{font-size:14px;color:var(--text-mid);line-height:1.6}
 
-  /* ══════════════════════════════
-     CART DRAWER
-  ══════════════════════════════ */
-  .cart-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 500; }
-  .cart-overlay.open { display: block; }
-  .cart-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: 420px; max-width: 100vw; background: var(--white); z-index: 501; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: -4px 0 24px rgba(0,0,0,0.1); }
-  .cart-drawer.open { transform: translateX(0); }
-  .cart-header { padding: 24px; border-bottom: 1px solid var(--gray-border); display: flex; align-items: center; justify-content: space-between; }
-  .cart-header h2 { font-family: var(--font-serif); font-size: 22px; }
-  .cart-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--gray-mid); padding: 4px; }
-  .cart-close:hover { color: var(--black); }
-  .cart-items { flex: 1; overflow-y: auto; padding: 16px 24px; display: flex; flex-direction: column; gap: 12px; }
-  .cart-empty { text-align: center; padding: 60px 20px; color: var(--gray-mid); }
-  .cart-empty-icon { font-size: 48px; display: block; margin-bottom: 12px; }
-  .cart-empty p { font-size: 14px; line-height: 1.6; }
-  .cart-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px; border: 1px solid var(--gray-border); border-radius: 4px; }
-  .cart-item-emoji { font-size: 32px; flex-shrink: 0; width: 50px; height: 50px; background: var(--gray-bg); display: flex; align-items: center; justify-content: center; border-radius: 4px; }
-  .cart-item-info { flex: 1; }
-  .cart-item-name { font-size: 13px; font-weight: 500; margin-bottom: 4px; line-height: 1.3; }
-  .cart-item-price { font-size: 13px; color: var(--gray-mid); }
-  .cart-item-controls { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
-  .qty-btn { width: 26px; height: 26px; border: 1px solid var(--gray-border); background: none; cursor: pointer; font-size: 14px; border-radius: 3px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; font-family: var(--font-sans); }
-  .qty-btn:hover { border-color: var(--black); background: var(--black); color: var(--white); }
-  .qty-num { font-size: 13px; font-weight: 500; min-width: 20px; text-align: center; }
-  .cart-item-remove { margin-left: auto; background: none; border: none; color: var(--gray-light); cursor: pointer; font-size: 16px; transition: color 0.15s; }
-  .cart-item-remove:hover { color: #c00; }
-  .cart-footer { padding: 20px 24px; border-top: 1px solid var(--gray-border); }
-  .cart-subtotal { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 14px; }
-  .cart-subtotal.total { font-weight: 500; font-size: 16px; border-top: 1px solid var(--gray-border); padding-top: 12px; margin-top: 6px; }
-  .cart-subtotal span:last-child { font-family: var(--font-serif); }
-  .cart-shipping-note { font-size: 11px; color: var(--gray-mid); text-align: center; margin: 12px 0; }
-  .checkout-btn { width: 100%; background: var(--black); color: var(--white); border: none; padding: 16px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); letter-spacing: 0.5px; border-radius: 4px; transition: opacity 0.2s; margin-bottom: 10px; }
-  .checkout-btn:hover { opacity: 0.85; }
-  .wa-order-btn { width: 100%; background: var(--green); color: var(--white); border: none; padding: 14px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); letter-spacing: 0.5px; border-radius: 4px; transition: opacity 0.2s; }
-  .wa-order-btn:hover { opacity: 0.9; }
+/* ── TESTIMONIOS ── */
+.test-section{background:var(--brown-dark);padding:80px 5%}
+.test-section .section-label{color:var(--gold-light)}
+.test-section .section-title{color:var(--white)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.test-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px}
+.test-stars{color:var(--gold-light);font-size:14px;margin-bottom:14px;letter-spacing:2px}
+.test-text{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;font-weight:300;margin-bottom:18px;font-family:var(--font-serif);font-style:italic}
+.test-author strong{color:var(--white);display:block;font-size:13px;font-weight:500}
+.test-author span{font-size:12px;color:rgba(255,255,255,.4)}
 
-  /* ══════════════════════════════
-     CHECKOUT MODAL
-  ══════════════════════════════ */
-  .checkout-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 600; align-items: center; justify-content: center; padding: 20px; }
-  .checkout-overlay.open { display: flex; }
-  .checkout-modal { background: var(--white); width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto; border-radius: 4px; }
-  .checkout-modal-header { padding: 28px 32px 20px; border-bottom: 1px solid var(--gray-border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--white); z-index: 1; }
-  .checkout-modal-header h2 { font-family: var(--font-serif); font-size: 24px; }
-  .checkout-modal-close { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--gray-mid); }
-  .checkout-steps { display: flex; padding: 20px 32px; gap: 0; border-bottom: 1px solid var(--gray-border); }
-  .checkout-step { flex: 1; text-align: center; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-mid); position: relative; padding-bottom: 12px; border-bottom: 2px solid var(--gray-border); transition: all 0.2s; }
-  .checkout-step.active { color: var(--black); border-bottom-color: var(--black); font-weight: 500; }
-  .checkout-step.done { color: var(--gray-mid); border-bottom-color: var(--gray-light); }
-  .checkout-body { padding: 28px 32px; }
-  .checkout-section-title { font-family: var(--font-serif); font-size: 18px; margin-bottom: 20px; }
-  .co-form { display: flex; flex-direction: column; gap: 14px; }
-  .co-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .co-field { display: flex; flex-direction: column; gap: 5px; }
-  .co-field label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-mid); }
-  .co-field input, .co-field select, .co-field textarea { border: 1px solid var(--gray-border); border-radius: 4px; padding: 11px 13px; font-family: var(--font-sans); font-size: 14px; color: var(--black); background: var(--white); transition: border-color 0.2s; appearance: none; }
-  .co-field input:focus, .co-field select:focus, .co-field textarea:focus { outline: none; border-color: var(--black); }
-  .co-field textarea { resize: none; height: 80px; }
-  .order-summary-items { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-  .os-item { display: flex; justify-content: space-between; align-items: center; font-size: 14px; padding: 10px 0; border-bottom: 1px solid var(--gray-border); }
-  .os-item-left { display: flex; gap: 10px; align-items: center; }
-  .os-item-emoji { font-size: 20px; }
-  .os-item-name { font-size: 13px; }
-  .os-item-qty { font-size: 12px; color: var(--gray-mid); }
-  .os-item-price { font-family: var(--font-serif); font-size: 15px; }
-  .os-totals { display: flex; flex-direction: column; gap: 8px; }
-  .os-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--gray-dark); }
-  .os-row.total { font-size: 16px; font-weight: 500; color: var(--black); border-top: 1px solid var(--gray-border); padding-top: 12px; margin-top: 4px; }
-  .os-row.total span:last-child { font-family: var(--font-serif); }
+/* ── CONTACTO ── */
+.contacto-section{padding:80px 5%;background:var(--white)}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto}
+.contacto-info .section-title{margin-bottom:16px}
+.contacto-info p{color:var(--text-mid);line-height:1.8;font-weight:300;margin-bottom:28px}
+.contact-channels{display:flex;flex-direction:column;gap:12px}
+.contact-channel{display:flex;gap:14px;align-items:center;padding:16px;border:1.5px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);transition:border-color .2s;background:var(--gray-bg)}
+.contact-channel:hover{border-color:var(--brown-dark)}
+.ch-icon{font-size:22px;width:40px;text-align:center;flex-shrink:0}
+.ch-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light);margin-bottom:2px}
+.ch-value{font-size:14px;font-weight:500;color:var(--brown-dark)}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.form-field{display:flex;flex-direction:column;gap:5px}
+.form-field label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-mid)}
+.form-field input,.form-field textarea,.form-field select{border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-family:var(--font-sans);font-size:14px;color:var(--text);background:var(--white);transition:border-color .2s;resize:none;appearance:none}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{outline:none;border-color:var(--brown)}
+.form-field textarea{height:90px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-submit{background:var(--brown-dark);color:var(--white);border:none;padding:14px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:.5px;cursor:pointer;font-family:var(--font-sans);transition:all .2s}
+.form-submit:hover{background:var(--brown);transform:translateY(-1px)}
 
-  /* PAYMENT METHODS */
-  .payment-methods { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-  .pay-method { border: 1px solid var(--gray-border); border-radius: 4px; cursor: pointer; transition: border-color 0.2s; }
-  .pay-method.selected { border-color: var(--black); }
-  .pay-method-header { display: flex; align-items: center; gap: 12px; padding: 14px 16px; }
-  .pay-method input[type=radio] { accent-color: var(--black); width: 16px; height: 16px; flex-shrink: 0; }
-  .pay-method-label { font-size: 14px; font-weight: 500; flex: 1; }
-  .pay-method-icons { font-size: 18px; letter-spacing: 4px; }
-  .pay-method-body { padding: 0 16px 16px; display: none; }
-  .pay-method.selected .pay-method-body { display: block; }
-  .card-fields { display: flex; flex-direction: column; gap: 10px; }
-  .card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .transfer-info { background: var(--gray-bg); border-radius: 4px; padding: 14px; font-size: 13px; line-height: 1.7; color: var(--gray-dark); }
-  .transfer-info strong { color: var(--black); display: block; margin-bottom: 6px; }
-  .oxxo-info { background: #fff3e0; border-radius: 4px; padding: 14px; font-size: 13px; line-height: 1.7; color: #7a4000; }
-  .oxxo-info strong { display: block; margin-bottom: 6px; color: #5a2d00; }
+/* ── FOOTER ── */
+.footer-full{background:var(--brown-dark)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding:60px 5%;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand-logo img{height:52px;width:auto;display:block;margin-bottom:14px;filter:brightness(2)}
+.footer-brand-tagline{font-family:var(--font-serif);font-style:italic;font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;max-width:240px}
+.footer-col h4{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:18px;font-weight:500}
+.footer-col a,.footer-col button{display:block;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;margin-bottom:10px;transition:color .2s;background:none;border:none;cursor:pointer;font-family:var(--font-sans);text-align:left;padding:0}
+.footer-col a:hover,.footer-col button:hover{color:var(--white)}
+.footer-bottom{padding:20px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links button{background:none;border:none;font-size:12px;color:rgba(255,255,255,.4);cursor:pointer;font-family:var(--font-sans);transition:color .2s}
+.footer-bottom-links button:hover{color:rgba(255,255,255,.8)}
 
-  /* CHECKOUT NAV BUTTONS */
-  .checkout-nav { display: flex; gap: 10px; margin-top: 24px; }
-  .co-btn-back { flex: 1; border: 1px solid var(--gray-border); background: none; color: var(--black); padding: 13px; border-radius: 4px; font-size: 14px; cursor: pointer; font-family: var(--font-sans); transition: border-color 0.2s; }
-  .co-btn-back:hover { border-color: var(--black); }
-  .co-btn-next { flex: 2; background: var(--black); color: var(--white); border: none; padding: 13px; border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); letter-spacing: 0.5px; transition: opacity 0.2s; }
-  .co-btn-next:hover { opacity: 0.85; }
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;background:var(--green-wa);color:var(--white);width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
 
-  /* SUCCESS */
-  .success-screen { text-align: center; padding: 40px 20px; }
-  .success-icon { font-size: 64px; display: block; margin-bottom: 16px; }
-  .success-screen h3 { font-family: var(--font-serif); font-size: 28px; margin-bottom: 12px; }
-  .success-screen p { color: var(--gray-dark); font-size: 14px; line-height: 1.7; margin-bottom: 24px; max-width: 340px; margin-left: auto; margin-right: auto; }
-  .success-wa { display: inline-block; background: var(--green); color: var(--white); padding: 14px 28px; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 500; }
+/* ── TOAST ── */
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--brown-dark);color:var(--white);padding:12px 24px;border-radius:50px;font-size:13px;opacity:0;transition:all .3s;z-index:9999;white-space:nowrap;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-  /* TOAST */
-  .toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--black); color: var(--white); padding: 12px 24px; border-radius: 4px; font-size: 13px; opacity: 0; transition: all 0.3s; z-index: 999; white-space: nowrap; pointer-events: none; }
-  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+/* ── CART DRAWER ── */
+.cart-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:500}
+.cart-overlay.open{display:block}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:400px;max-width:100vw;background:var(--white);z-index:501;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;box-shadow:-4px 0 24px rgba(0,0,0,.08)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-header{padding:22px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cart-header h2{font-family:var(--font-serif);font-size:22px;color:var(--brown-dark)}
+.cart-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-light);padding:4px}
+.cart-close:hover{color:var(--text)}
+.cart-items{flex:1;overflow-y:auto;padding:16px 24px;display:flex;flex-direction:column;gap:12px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--text-light)}
+.cart-empty-icon{font-size:48px;display:block;margin-bottom:12px}
+.cart-item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--border);border-radius:12px}
+.cart-item-emoji{font-size:30px;flex-shrink:0;width:50px;height:50px;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;border-radius:10px}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:13px;font-weight:500;margin-bottom:4px;color:var(--brown-dark)}
+.cart-item-price{font-size:12px;color:var(--text-light)}
+.cart-item-controls{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty-btn{width:26px;height:26px;border:1px solid var(--border);background:none;cursor:pointer;font-size:14px;border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:var(--font-sans);color:var(--text)}
+.qty-btn:hover{border-color:var(--brown-dark);background:var(--brown-dark);color:var(--white)}
+.qty-num{font-size:13px;font-weight:500;min-width:20px;text-align:center}
+.cart-item-remove{margin-left:auto;background:none;border:none;color:var(--border);cursor:pointer;font-size:16px;transition:color .15s}
+.cart-item-remove:hover{color:#c00}
+.cart-footer{padding:18px 24px;border-top:1px solid var(--border)}
+.cart-subtotal{display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px;color:var(--text-mid)}
+.cart-subtotal.total{font-weight:500;font-size:16px;border-top:1px solid var(--border);padding-top:12px;margin-top:6px;color:var(--brown-dark)}
+.cart-subtotal.total span:last-child{font-family:var(--font-serif)}
+.cart-shipping-note{font-size:11px;color:var(--text-light);text-align:center;margin:12px 0}
+.checkout-btn{width:100%;background:var(--brown-dark);color:var(--white);border:none;padding:15px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-sans);border-radius:50px;transition:all .2s;margin-bottom:10px}
+.checkout-btn:hover{background:var(--brown)}
+.wa-order-btn{width:100%;background:var(--green-wa);color:var(--white);border:none;padding:13px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-sans);border-radius:50px;transition:opacity .2s}
+.wa-order-btn:hover{opacity:.9}
 
-  /* COOKIE BANNER */
-  .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #111; color: #fff; z-index: 998; padding: 16px 5%; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; border-top: 2px solid #333; }
-  .cookie-banner.hidden { display: none; }
-  .cookie-banner p { color: #ccc; line-height: 1.5; flex: 1; min-width: 240px; }
-  .cookie-banner a { color: #fff; text-decoration: underline; cursor: pointer; }
-  .cookie-btns { display: flex; gap: 8px; flex-shrink: 0; }
-  .cookie-btn-accept { background: #fff; color: #111; border: none; padding: 9px 20px; border-radius: 4px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); }
-  .cookie-btn-reject { background: none; color: #888; border: 1px solid #444; padding: 9px 16px; border-radius: 4px; font-size: 13px; cursor: pointer; font-family: var(--font-sans); }
-  .cookie-btn-reject:hover { color: #fff; border-color: #666; }
+/* ── CHECKOUT MODAL ── */
+.checkout-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:600;align-items:center;justify-content:center;padding:20px}
+.checkout-overlay.open{display:flex}
+.checkout-modal{background:var(--white);width:100%;max-width:580px;max-height:90vh;overflow-y:auto;border-radius:20px}
+.checkout-modal-header{padding:26px 30px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--white);z-index:1}
+.checkout-modal-header h2{font-family:var(--font-serif);font-size:22px;color:var(--brown-dark)}
+.checkout-modal-close{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-light)}
+.checkout-steps{display:flex;padding:16px 30px;gap:0;border-bottom:1px solid var(--border)}
+.checkout-step{flex:1;text-align:center;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);padding-bottom:10px;border-bottom:2px solid var(--border);transition:all .2s}
+.checkout-step.active{color:var(--brown-dark);border-bottom-color:var(--brown-dark);font-weight:500}
+.checkout-step.done{color:var(--text-light);border-bottom-color:var(--beige2)}
+.checkout-body{padding:26px 30px}
+.checkout-section-title{font-family:var(--font-serif);font-size:18px;color:var(--brown-dark);margin-bottom:18px}
+.co-form{display:flex;flex-direction:column;gap:13px}
+.co-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.co-field{display:flex;flex-direction:column;gap:5px}
+.co-field label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-mid)}
+.co-field input,.co-field select,.co-field textarea{border:1.5px solid var(--border);border-radius:10px;padding:11px 13px;font-family:var(--font-sans);font-size:14px;color:var(--text);background:var(--white);transition:border-color .2s;appearance:none}
+.co-field input:focus,.co-field select:focus,.co-field textarea:focus{outline:none;border-color:var(--brown)}
+.co-field textarea{resize:none;height:80px}
+.co-field input.error,.co-field select.error,.co-field textarea.error{border-color:#e00!important;background:#fff8f8}
+.co-field label .req{color:#e00;margin-left:2px}
+.co-field .field-error{font-size:11px;color:#e00;margin-top:3px;display:none}
+.co-field .field-error.show{display:block}
+.co-consent{display:flex;gap:10px;align-items:flex-start;margin-top:4px}
+.co-consent input[type=checkbox]{margin-top:3px;accent-color:var(--brown-dark);flex-shrink:0}
+.co-consent label{font-size:12px;color:var(--text-light);line-height:1.5}
+.co-consent a{color:var(--brown-dark);cursor:pointer}
+.order-summary-items{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.os-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:10px 0;border-bottom:1px solid var(--border)}
+.os-item-left{display:flex;gap:10px;align-items:center}
+.os-item-emoji{font-size:20px}
+.os-item-name{font-size:13px;color:var(--brown-dark)}
+.os-item-qty{font-size:12px;color:var(--text-light)}
+.os-item-price{font-family:var(--font-serif);font-size:15px;color:var(--terra)}
+.os-totals{display:flex;flex-direction:column;gap:8px}
+.os-row{display:flex;justify-content:space-between;font-size:13px;color:var(--text-mid)}
+.os-row.total{font-size:16px;font-weight:500;color:var(--brown-dark);border-top:1px solid var(--border);padding-top:12px;margin-top:4px}
+.os-row.total span:last-child{font-family:var(--font-serif)}
+.payment-methods{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.pay-method{border:1.5px solid var(--border);border-radius:12px;cursor:pointer;transition:border-color .2s}
+.pay-method.selected{border-color:var(--brown-dark)}
+.pay-method-header{display:flex;align-items:center;gap:12px;padding:13px 16px}
+.pay-method input[type=radio]{accent-color:var(--brown-dark);width:16px;height:16px;flex-shrink:0}
+.pay-method-label{font-size:14px;font-weight:500;flex:1;color:var(--brown-dark)}
+.pay-method-icons{font-size:18px;letter-spacing:4px}
+.pay-method-body{padding:0 16px 14px;display:none}
+.pay-method.selected .pay-method-body{display:block}
+.transfer-info{background:var(--gray-bg);border-radius:10px;padding:14px;font-size:13px;line-height:1.7;color:var(--text-mid)}
+.transfer-info strong{color:var(--brown-dark);display:block;margin-bottom:6px}
+.oxxo-info{background:#fff3e0;border-radius:10px;padding:14px;font-size:13px;line-height:1.7;color:#7a4000}
+.oxxo-info strong{display:block;margin-bottom:6px;color:#5a2d00}
+.checkout-nav{display:flex;gap:10px;margin-top:20px}
+.co-btn-back{flex:1;border:1.5px solid var(--border);background:none;color:var(--text);padding:13px;border-radius:50px;font-size:14px;cursor:pointer;font-family:var(--font-sans);transition:border-color .2s}
+.co-btn-back:hover{border-color:var(--brown-dark)}
+.co-btn-next{flex:2;background:var(--brown-dark);color:var(--white);border:none;padding:13px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-sans);transition:all .2s}
+.co-btn-next:hover{background:var(--brown)}
+.success-screen{text-align:center;padding:40px 20px}
+.success-icon{font-size:64px;display:block;margin-bottom:16px}
+.success-screen h3{font-family:var(--font-serif);font-size:26px;color:var(--brown-dark);margin-bottom:12px}
+.success-screen p{color:var(--text-mid);font-size:14px;line-height:1.7;margin-bottom:24px;max-width:340px;margin-left:auto;margin-right:auto}
+.success-wa{display:inline-block;background:var(--green-wa);color:var(--white);padding:14px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:500}
 
-  /* PRIVACY MODAL */
-  .privacy-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 700; align-items: center; justify-content: center; padding: 20px; }
-  .privacy-overlay.open { display: flex; }
-  .privacy-modal { background: var(--white); width: 100%; max-width: 680px; max-height: 88vh; border-radius: 4px; display: flex; flex-direction: column; }
-  .privacy-modal-header { padding: 24px 32px; border-bottom: 1px solid var(--gray-border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--white); z-index: 1; flex-shrink: 0; }
-  .privacy-modal-header h2 { font-family: var(--font-serif); font-size: 22px; }
-  .privacy-modal-tabs { display: flex; border-bottom: 1px solid var(--gray-border); padding: 0 32px; flex-shrink: 0; overflow-x: auto; }
-  .privacy-tab { font-size: 12px; letter-spacing: 0.5px; padding: 12px 0; margin-right: 24px; border-bottom: 2px solid transparent; cursor: pointer; color: var(--gray-mid); white-space: nowrap; transition: all 0.2s; }
-  .privacy-tab.active { color: var(--black); border-bottom-color: var(--black); font-weight: 500; }
-  .privacy-modal-body { padding: 28px 32px; overflow-y: auto; font-size: 14px; line-height: 1.8; color: var(--gray-dark); flex: 1; }
-  .privacy-modal-body h3 { font-family: var(--font-serif); font-size: 18px; color: var(--black); margin: 24px 0 10px; }
-  .privacy-modal-body h3:first-child { margin-top: 0; }
-  .privacy-modal-body p { margin-bottom: 12px; }
-  .privacy-modal-body ul { margin: 8px 0 12px 20px; }
-  .privacy-modal-body ul li { margin-bottom: 6px; }
-  .privacy-modal-body .highlight-box { background: var(--gray-bg); border-left: 3px solid var(--black); padding: 14px 16px; border-radius: 0 4px 4px 0; margin: 16px 0; font-size: 13px; }
-  .privacy-modal-body .last-update { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-light); margin-bottom: 20px; }
-  .privacy-modal-footer { padding: 16px 32px; border-top: 1px solid var(--gray-border); display: flex; justify-content: flex-end; gap: 10px; flex-shrink: 0; }
-  .privacy-close-btn { background: var(--black); color: var(--white); border: none; padding: 11px 24px; border-radius: 4px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-sans); }
+/* ── FECHAS ESPECIALES ── */
+.fechas-dropdown{position:relative}
+.fechas-submenu{display:none;position:absolute;top:calc(100% + 6px);left:0;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:8px;z-index:50;width:440px;box-shadow:0 8px 24px rgba(0,0,0,.1);flex-wrap:wrap}
+.fechas-dropdown:hover .fechas-submenu,.fechas-dropdown:focus-within .fechas-submenu{display:flex}
+.fechas-submenu button{background:none;border:none;padding:7px 12px;font-size:12px;color:var(--text-mid);cursor:pointer;font-family:var(--font-sans);text-align:left;width:50%;border-radius:8px;transition:background .15s;white-space:nowrap}
+.fechas-submenu button:hover{background:var(--gray-bg);color:var(--brown-dark)}
 
-  /* FOOTER EXPANDED */
-  .footer-full { border-top: 1px solid var(--gray-border); background: var(--white); }
-  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding: 48px 5%; border-bottom: 1px solid var(--gray-border); }
-  .footer-brand p { font-size: 13px; color: var(--gray-mid); line-height: 1.7; margin-top: 10px; max-width: 260px; }
-  .footer-col h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--black); margin-bottom: 16px; font-weight: 500; }
-  .footer-col a { display: block; font-size: 13px; color: var(--gray-mid); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-  .footer-col a:hover { color: var(--black); }
-  .footer-col button { display: block; background: none; border: none; font-size: 13px; color: var(--gray-mid); cursor: pointer; padding: 0; margin-bottom: 10px; font-family: var(--font-sans); transition: color 0.2s; text-align: left; }
-  .footer-col button:hover { color: var(--black); }
-  .footer-bottom { padding: 20px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-bottom-copy { font-size: 12px; color: var(--gray-light); }
-  .footer-bottom-links { display: flex; gap: 20px; }
-  .footer-bottom-links button { background: none; border: none; font-size: 12px; color: var(--gray-mid); cursor: pointer; font-family: var(--font-sans); transition: color 0.2s; }
-  .footer-bottom-links button:hover { color: var(--black); }
+/* ── PRIVACY MODAL ── */
+.privacy-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:700;align-items:center;justify-content:center;padding:20px}
+.privacy-overlay.open{display:flex}
+.privacy-modal{background:var(--white);width:100%;max-width:660px;max-height:88vh;border-radius:20px;display:flex;flex-direction:column}
+.privacy-modal-header{padding:22px 30px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.privacy-modal-header h2{font-family:var(--font-serif);font-size:21px;color:var(--brown-dark)}
+.privacy-modal-tabs{display:flex;border-bottom:1px solid var(--border);padding:0 30px;flex-shrink:0;overflow-x:auto}
+.privacy-tab{font-size:12px;letter-spacing:.5px;padding:12px 0;margin-right:22px;border-bottom:2px solid transparent;cursor:pointer;color:var(--text-light);white-space:nowrap;transition:all .2s}
+.privacy-tab.active{color:var(--brown-dark);border-bottom-color:var(--brown-dark);font-weight:500}
+.privacy-modal-body{padding:26px 30px;overflow-y:auto;font-size:14px;line-height:1.8;color:var(--text-mid);flex:1}
+.privacy-modal-body h3{font-family:var(--font-serif);font-size:17px;color:var(--brown-dark);margin:22px 0 8px}
+.privacy-modal-body h3:first-child{margin-top:0}
+.privacy-modal-body p{margin-bottom:12px}
+.privacy-modal-body ul{margin:8px 0 12px 20px}
+.privacy-modal-body ul li{margin-bottom:6px}
+.privacy-modal-body .highlight-box{background:var(--gray-bg);border-left:3px solid var(--terra);padding:14px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:13px}
+.privacy-modal-body .last-update{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);margin-bottom:18px}
+.privacy-modal-footer{padding:16px 30px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;flex-shrink:0}
+.privacy-close-btn{background:var(--brown-dark);color:var(--white);border:none;padding:11px 24px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-sans)}
 
-  /* CHECKOUT PRIVACY CONSENT */
-  .co-consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 4px; }
-  .co-consent input[type=checkbox] { margin-top: 3px; accent-color: var(--black); flex-shrink: 0; }
-  .co-consent label { font-size: 12px; color: var(--gray-mid); line-height: 1.5; }
-  .co-consent a { color: var(--black); cursor: pointer; }
+/* ── COOKIE BANNER ── */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--brown-dark);color:var(--white);z-index:998;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
+.cookie-banner.hidden{display:none}
+.cookie-banner p{color:rgba(255,255,255,.7);line-height:1.5;flex:1;min-width:240px}
+.cookie-banner a{color:var(--white);text-decoration:underline;cursor:pointer}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0}
+.cookie-btn-accept{background:var(--gold-light);color:var(--white);border:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-sans)}
+.cookie-btn-reject{background:none;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:9px 16px;border-radius:50px;font-size:13px;cursor:pointer;font-family:var(--font-sans)}
+.cookie-btn-reject:hover{color:var(--white)}
 
-  .nav-search-bar { display: flex; border: 1px solid var(--gray-border); border-radius: 4px; overflow: hidden; transition: border-color 0.2s; }
-  .nav-search-bar:focus-within { border-color: var(--black); }
-  .nav-search-bar input { border: none; padding: 8px 12px; font-family: var(--font-sans); font-size: 13px; color: var(--black); outline: none; width: 220px; background: transparent; }
-  .nav-search-bar input::placeholder { color: var(--gray-light); }
-  .nav-search-bar button { background: var(--black); color: var(--white); border: none; padding: 8px 12px; cursor: pointer; font-size: 13px; transition: opacity 0.2s; }
-  .nav-search-bar button:hover { opacity: 0.8; }
-
-  /* SEARCH BAR */
-  .search-bar-wrap { padding: 24px 5% 0; display: flex; justify-content: center; }
-  .search-bar { display: flex; width: 100%; max-width: 600px; border: 1.5px solid var(--gray-border); border-radius: 4px; overflow: hidden; transition: border-color 0.2s; background: var(--white); }
-  .search-bar:focus-within { border-color: var(--black); }
-  .search-bar input { flex: 1; border: none; padding: 13px 16px; font-family: var(--font-sans); font-size: 14px; color: var(--black); outline: none; background: transparent; }
-  .search-bar input::placeholder { color: var(--gray-light); }
-  .search-bar button { background: var(--black); color: var(--white); border: none; padding: 13px 20px; cursor: pointer; font-size: 16px; transition: opacity 0.2s; }
-  .search-bar button:hover { opacity: 0.8; }
-  .search-results-count { text-align: center; font-size: 12px; color: var(--gray-mid); margin-top: 10px; letter-spacing: 0.5px; }
-  .no-results { text-align: center; padding: 48px 20px; color: var(--gray-mid); }
-  .no-results span { font-size: 40px; display: block; margin-bottom: 12px; }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-visual { min-height: 280px; order: -1; }
-    .hero-content { padding: 48px 5%; }
-    .cat-grid { grid-template-columns: 1fr; }
-    .usp-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    .test-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 16px; text-align: center; }
-    .product-grid { grid-template-columns: repeat(2,1fr); }
-    .form-row { grid-template-columns: 1fr; }
-    .cart-drawer { width: 100vw; }
-    .co-row { grid-template-columns: 1fr; }
-    .card-row { grid-template-columns: 1fr; }
-    .checkout-body { padding: 20px; }
-    .checkout-modal-header { padding: 20px; }
-    .checkout-steps { padding: 16px 20px; }
-  }
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-mobile-toggle{display:block}
+  .nav-search-bar{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-visual{min-height:320px;order:-1}
+  .hero-content{padding:48px 5%}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .personalizacion-inner{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .proceso-grid{grid-template-columns:1fr;gap:24px}
+  .proceso-grid::before{display:none}
+  .nosotros-grid{grid-template-columns:1fr}
+  .test-grid{grid-template-columns:1fr}
+  .contacto-grid{grid-template-columns:1fr;gap:40px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .co-row{grid-template-columns:1fr}
+  .hero-stats{gap:16px}
+}
+@media(max-width:600px){
+  .cat-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{justify-content:center}
+  .eventos-chip{font-size:11px;padding:6px 13px}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">
-    <img src="logo.jpeg" alt="Que Bonita Vela" style="height:44px;width:auto;display:block;">
-  </a>
-  <ul class="nav-links">
-    <li><a href="#productos">Productos</a></li>
-    <li><a href="#categorias">Categorías</a></li>
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="nav-search-bar">
-      <input type="text" id="navSearchInput" placeholder="🔍 Buscar productos..." oninput="navSearch(this.value)" onkeydown="if(event.key==='Enter'){navSearch(this.value);document.getElementById('productos').scrollIntoView({behavior:'smooth'})}">
-      <button onclick="navSearch(document.getElementById('navSearchInput').value);document.getElementById('productos').scrollIntoView({behavior:'smooth'})">→</button>
+  <div class="nav-inner">
+    <a href="#" style="text-decoration:none">
+      <img src="logo.jpeg" alt="Que Bonita Vela" style="height:46px;width:auto">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#categorias">Categorías</a></li>
+      <li><a href="#eventos">Eventos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-bar">
+        <input type="text" id="navSearchInput" placeholder="🔍 Buscar..." oninput="navSearch(this.value)" onkeydown="if(event.key==='Enter'){navSearch(this.value);document.getElementById('productos').scrollIntoView({behavior:'smooth'})}">
+        <button onclick="navSearch(document.getElementById('navSearchInput').value);document.getElementById('productos').scrollIntoView({behavior:'smooth'})">→</button>
+      </div>
+      <button class="nav-cart-btn" onclick="openCart()">🛒 <span class="cart-count hidden" id="cartCount">0</span></button>
+      <a class="nav-cta-wa" href="https://wa.me/524434929560?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Que%20Bonita%20Vela%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20un%20producto." target="_blank">💬 WhatsApp</a>
+      <button class="nav-mobile-toggle" onclick="alert('Menú — próximamente')">☰</button>
     </div>
-    <button class="nav-cart-btn" onclick="openCart()">
-      🛒 <span class="cart-count hidden" id="cartCount">0</span>
-    </button>
-    <a class="nav-cta" href="https://wa.me/524434929560?text=Hola,%20vi%20su%20página" target="_blank">WhatsApp</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow">✦ Artesanía · Corte láser · Hecho en México</p>
-    <h1 class="hero-title">Objetos que<br><em>iluminan</em><br>tu hogar</h1>
-    <p class="hero-desc">Velas artesanales, decoración en madera, vasijas de cemento y mucho más. Cada pieza diseñada con cuidado y cortada con precisión láser.</p>
+    <div class="hero-badge">🕯️ Hecho con amor en Michoacán</div>
+    <h1 class="hero-title">Velas artesanales y regalos <em>personalizados</em> hechos con amor</h1>
+    <p class="hero-subtitle">Creamos velas, detalles decorativos y piezas personalizadas para regalar, decorar y celebrar momentos especiales.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#productos">Ver catálogo</a>
-      <button class="btn-outline" onclick="openCart()">🛒 Mi carrito</button>
+      <a class="btn btn-primary" href="#productos">Ver catálogo</a>
+      <a class="btn btn-wa" href="https://wa.me/524434929560?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Que%20Bonita%20Vela%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n." target="_blank">💬 Pedir por WhatsApp</a>
+      <a class="btn btn-outline" href="https://wa.me/524434929560?text=Hola%2C%20quisiera%20solicitar%20algo%20personalizado." target="_blank">✨ Solicitar personalizado</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="hero-stat-num">1000+</span><div class="hero-stat-label">Productos</div></div>
+      <div><span class="hero-stat-num">500+</span><div class="hero-stat-label">Clientes satisfechos</div></div>
+      <div><span class="hero-stat-num" style="color:var(--terra)">100%</span><div class="hero-stat-label">Artesanal</div></div>
     </div>
   </div>
-  <div class="hero-visual" style="padding:0;background:#1a1008;">
-    <img src="artesana.png" alt="Artesana Que Bonita Vela" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+  <div class="hero-visual">
+    <img src="artesana.png" alt="Artesana Que Bonita Vela elaborando producto artesanal">
+    <div class="hero-visual-overlay"></div>
+    <div class="hero-tag"><strong>🇲🇽 Envíos a toda la República</strong>Michoacán, México</div>
   </div>
 </section>
 
@@ -397,197 +454,221 @@
 <div class="marquee-strip">
   <div class="marquee-track">
     <span class="marquee-item">Velas artesanales</span>
+    <span class="marquee-item">Regalos personalizados</span>
     <span class="marquee-item">Corte láser</span>
-    <span class="marquee-item">Grabado láser</span>
+    <span class="marquee-item">Decoración artesanal</span>
     <span class="marquee-item">Jardines de suculentas</span>
     <span class="marquee-item">Madera decorativa</span>
     <span class="marquee-item">Vasijas de cemento</span>
-    <span class="marquee-item">Juguetes</span>
     <span class="marquee-item">Artículos religiosos</span>
     <span class="marquee-item">Holístico</span>
+    <span class="marquee-item">Fechas especiales</span>
     <span class="marquee-item">Velas artesanales</span>
+    <span class="marquee-item">Regalos personalizados</span>
     <span class="marquee-item">Corte láser</span>
-    <span class="marquee-item">Grabado láser</span>
+    <span class="marquee-item">Decoración artesanal</span>
     <span class="marquee-item">Jardines de suculentas</span>
     <span class="marquee-item">Madera decorativa</span>
     <span class="marquee-item">Vasijas de cemento</span>
-    <span class="marquee-item">Juguetes</span>
     <span class="marquee-item">Artículos religiosos</span>
     <span class="marquee-item">Holístico</span>
+    <span class="marquee-item">Fechas especiales</span>
   </div>
 </div>
 
-<!-- PERSONALIZACIÓN BANNER -->
-<section style="background:#111;padding:64px 5%;text-align:center;">
-  <p style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#555;margin-bottom:16px;">✦ Servicio especial</p>
-  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,52px);color:#fff;line-height:1.1;margin-bottom:20px;">
-    <em style="font-style:italic;color:#fff;">Casi todo</em> lo que ves<br>puede ser tuyo, a tu manera
-  </h2>
-  <p style="font-size:16px;color:#888;max-width:620px;margin:0 auto 40px;line-height:1.8;font-weight:300;">
-    Personalizamos cualquier producto con <strong style="color:#ccc;">nombres</strong>, <strong style="color:#ccc;">logotipos empresariales</strong> o <strong style="color:#ccc;">mensajes con dedicatoria</strong> — perfectos para regalar, para tu negocio o para hacer tuyo algo verdaderamente único.
-  </p>
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;">
-    <div style="background:#1a1a1a;border:1px solid #222;padding:20px 28px;border-radius:4px;text-align:center;min-width:160px;">
-      <div style="font-size:32px;margin-bottom:10px;">👤</div>
-      <div style="font-size:13px;font-weight:500;color:#fff;margin-bottom:4px;">Nombres</div>
-      <div style="font-size:12px;color:#555;line-height:1.5;">Para esa persona<br>especial en tu vida</div>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-grid">
+    <div class="trust-item"><span class="trust-icon">🤝</span><div class="trust-title">Hecho a mano</div><div class="trust-desc">Cada pieza elaborada con dedicación y cuidado artesanal</div></div>
+    <div class="trust-item"><span class="trust-icon">✍️</span><div class="trust-title">Personalizable</div><div class="trust-desc">Nombres, fechas, logos y mensajes especiales a tu medida</div></div>
+    <div class="trust-item"><span class="trust-icon">🎁</span><div class="trust-title">Empaque de regalo</div><div class="trust-desc">Presentación cuidada, lista para regalar desde el primer momento</div></div>
+    <div class="trust-item"><span class="trust-icon">💬</span><div class="trust-title">Atención directa</div><div class="trust-desc">Resolvemos dudas y coordinamos tu pedido por WhatsApp</div></div>
+  </div>
+</div>
+
+<!-- PERSONALIZACIÓN -->
+<section style="background:linear-gradient(135deg,var(--brown-dark) 0%,#2e1a0e 100%);padding:80px 5%;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-40px;right:-40px;width:300px;height:300px;border-radius:50%;background:rgba(212,168,67,.07);pointer-events:none"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto" class="personalizacion-inner-grid">
+    <div>
+      <span class="section-label" style="color:var(--gold-light)">Servicio especial</span>
+      <h2 class="section-title" style="color:var(--white)"><em style="color:var(--gold-light)">Casi todo</em> lo que ves puede ser tuyo, a tu manera</h2>
+      <p style="color:rgba(255,255,255,.7);line-height:1.8;font-weight:300;margin-bottom:16px;font-size:15px">¿Tienes una idea especial? Podemos ayudarte a convertirla en un detalle único. Personalizamos velas, piezas decorativas y productos en MDF para que tu regalo tenga un significado especial.</p>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 22px;font-size:13px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:28px">
+        ⚡ <strong style="color:rgba(255,255,255,.9)">¿Cómo funciona?</strong><br>
+        Escríbenos por WhatsApp con tu idea — nombre, texto o manda tu logo — y nosotros nos encargamos del resto. Sin costo y sin compromiso.
+      </div>
+      <a class="btn btn-gold" href="https://wa.me/524434929560?text=Hola%2C%20quisiera%20cotizar%20un%20pedido%20personalizado." target="_blank">💬 Pregunta por tu personalización →</a>
     </div>
-    <div style="background:#1a1a1a;border:1px solid #333;padding:20px 28px;border-radius:4px;text-align:center;min-width:160px;">
-      <div style="font-size:32px;margin-bottom:10px;">🏢</div>
-      <div style="font-size:13px;font-weight:500;color:#fff;margin-bottom:4px;">Logotipos</div>
-      <div style="font-size:12px;color:#555;line-height:1.5;">Ideal para empresas<br>y negocios</div>
-    </div>
-    <div style="background:#1a1a1a;border:1px solid #222;padding:20px 28px;border-radius:4px;text-align:center;min-width:160px;">
-      <div style="font-size:32px;margin-bottom:10px;">💌</div>
-      <div style="font-size:13px;font-weight:500;color:#fff;margin-bottom:4px;">Dedicatorias</div>
-      <div style="font-size:12px;color:#555;line-height:1.5;">Mensajes que se<br>guardan para siempre</div>
-    </div>
-    <div style="background:#1a1a1a;border:1px solid #222;padding:20px 28px;border-radius:4px;text-align:center;min-width:160px;">
-      <div style="font-size:32px;margin-bottom:10px;">🎁</div>
-      <div style="font-size:13px;font-weight:500;color:#fff;margin-bottom:4px;">Regalos</div>
-      <div style="font-size:12px;color:#555;line-height:1.5;">Bodas, XV años,<br>cumpleaños y más</div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px"><span style="font-size:24px">👤</span><div><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:2px">Nombres personalizados</div><div style="font-size:12px;color:rgba(255,255,255,.5)">Para esa persona especial en tu vida</div></div></div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px"><span style="font-size:24px">🏢</span><div><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:2px">Logotipos empresariales</div><div style="font-size:12px;color:rgba(255,255,255,.5)">Ideal para empresas y negocios</div></div></div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px"><span style="font-size:24px">💌</span><div><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:2px">Mensajes con dedicatoria</div><div style="font-size:12px;color:rgba(255,255,255,.5)">Palabras que se guardan para siempre</div></div></div>
+      <div style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px"><span style="font-size:24px">🎁</span><div><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:2px">Regalos para eventos</div><div style="font-size:12px;color:rgba(255,255,255,.5)">Bodas, XV años, bautizos y más</div></div></div>
     </div>
   </div>
-  <div style="background:#1a1a1a;border:1px solid #222;border-radius:4px;padding:20px 28px;max-width:500px;margin:0 auto 36px;font-size:13px;color:#666;line-height:1.7;">
-    ⚡ <strong style="color:#aaa;">¿Cómo funciona?</strong><br>
-    Escríbenos por WhatsApp con tu idea — nombre, texto o manda tu logo — y nosotros nos encargamos del resto. Cotización sin costo y sin compromiso.
-  </div>
-  <a href="https://wa.me/524434929560?text=Hola!%20Me%20interesa%20personalizar%20un%20producto%20con%20mi%20nombre%20/%20logo%20/%20dedicatoria" target="_blank"
-    style="display:inline-block;background:#fff;color:#111;padding:15px 36px;border-radius:4px;font-size:14px;font-weight:500;letter-spacing:0.5px;text-decoration:none;transition:opacity 0.2s;"
-    onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-    💬 Pregunta por tu personalización →
-  </a>
 </section>
 
-<!-- PRODUCTOS -->
-<section id="productos">
-  <div class="section-header">
-    <div>
-      <p class="section-eyebrow">Catálogo</p>
-      <h2 class="section-title">Nuestros productos</h2>
-    </div>
-    <a class="section-link" href="#contacto">Ver todo →</a>
+<!-- BÚSQUEDA + PRODUCTOS -->
+<section class="productos-section" id="productos">
+  <div class="productos-header">
+    <span class="section-label">Catálogo</span>
+    <h2 class="section-title">Nuestros productos</h2>
   </div>
   <div class="search-bar-wrap">
     <div>
       <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="🔍 Busca por nombre, material o categoría... ej: vela, madera, suculenta" oninput="searchProducts(this.value)">
+        <input type="text" id="searchInput" placeholder="🔍 Busca por nombre, material o categoría..." oninput="searchProducts(this.value)">
         <button onclick="searchProducts(document.getElementById('searchInput').value)">🔍</button>
       </div>
       <p class="search-results-count" id="searchCount"></p>
     </div>
   </div>
-
   <div class="product-filter">
     <button class="filter-btn active" onclick="filterProducts('all',this)">Todos</button>
-    <button class="filter-btn" onclick="filterProducts('velas',this)">Velas</button>
-    <button class="filter-btn" onclick="filterProducts('madera',this)">Madera</button>
-    <button class="filter-btn" onclick="filterProducts('cemento',this)">Cemento</button>
-    <button class="filter-btn" onclick="filterProducts('religioso',this)">Religioso</button>
-    <button class="filter-btn" onclick="filterProducts('juguetes',this)">Juguetes</button>
-    <button class="filter-btn" onclick="filterProducts('holistico',this)">Holístico</button>
+    <button class="filter-btn" onclick="filterProducts('velas',this)">🕯️ Velas</button>
+    <button class="filter-btn" onclick="filterProducts('madera',this)">🪵 Madera</button>
+    <button class="filter-btn" onclick="filterProducts('cemento',this)">🏺 Cemento</button>
+    <button class="filter-btn" onclick="filterProducts('religioso',this)">🙏 Religioso</button>
+    <button class="filter-btn" onclick="filterProducts('juguetes',this)">🧸 Juguetes</button>
+    <button class="filter-btn" onclick="filterProducts('holistico',this)">🔮 Holístico</button>
+    <div class="fechas-dropdown">
+      <button class="filter-btn" onclick="filterProducts('fechas',this)">📅 Fechas Especiales ▾</button>
+      <div class="fechas-submenu">
+        <button onclick="filterByFecha('Día de las Madres')">💐 Día de las Madres</button>
+        <button onclick="filterByFecha('Día del Padre')">👔 Día del Padre</button>
+        <button onclick="filterByFecha('Graduaciones')">🎓 Graduaciones</button>
+        <button onclick="filterByFecha('XV Años')">👑 XV Años</button>
+        <button onclick="filterByFecha('Bautizos')">🕊️ Bautizos</button>
+        <button onclick="filterByFecha('Baby Shower')">🍼 Baby Shower</button>
+        <button onclick="filterByFecha('Bodas')">💍 Bodas</button>
+        <button onclick="filterByFecha('San Valentín')">❤️ San Valentín</button>
+        <button onclick="filterByFecha('Día de Muertos')">💀 Día de Muertos</button>
+        <button onclick="filterByFecha('Navidad')">🎄 Navidad</button>
+        <button onclick="filterByFecha('Reyes Magos')">⭐ Reyes Magos</button>
+        <button onclick="filterByFecha('Pascua')">🐰 Pascua</button>
+        <button onclick="filterByFecha('Fiestas Patrias')">🇲🇽 Fiestas Patrias</button>
+        <button onclick="filterByFecha('Cumpleaños')">🎂 Cumpleaños</button>
+        <button onclick="filterByFecha('Aniversarios')">🥂 Aniversarios</button>
+        <button onclick="filterByFecha('Primera Comunión')">✝️ Primera Comunión</button>
+      </div>
+    </div>
   </div>
   <div class="product-grid" id="productGrid"></div>
 </section>
 
 <!-- CATEGORÍAS -->
 <section class="cat-section" id="categorias">
-  <div class="section-header">
-    <div><p class="section-eyebrow">Explora</p><h2 class="section-title">Por categoría</h2></div>
+  <div style="text-align:center;margin-bottom:48px">
+    <span class="section-label">Explora</span>
+    <h2 class="section-title">Por categoría</h2>
+    <div class="divider"></div>
   </div>
   <div class="cat-grid">
-    <a class="cat-card" href="#productos" onclick="filterProducts('velas', document.querySelectorAll('.filter-btn')[1])">
-      <span class="cat-icon">🕯️</span><h3 class="cat-name">Velas & Jardines</h3>
-      <p class="cat-desc">Velas artesanales y jardines con forma de suculentas y cactus en cera.</p>
-      <span class="cat-arrow">→</span>
-    </a>
-    <a class="cat-card" href="#productos" onclick="filterProducts('madera', document.querySelectorAll('.filter-btn')[2])">
-      <span class="cat-icon">🪵</span><h3 class="cat-name">Madera & Láser</h3>
-      <p class="cat-desc">Piezas decorativas cortadas y grabadas con precisión láser en madera natural.</p>
-      <span class="cat-arrow">→</span>
-    </a>
-    <a class="cat-card" href="#productos" onclick="filterProducts('cemento', document.querySelectorAll('.filter-btn')[3])">
-      <span class="cat-icon">🏺</span><h3 class="cat-name">Cemento & Arte</h3>
-      <p class="cat-desc">Vasijas y macetas de cemento decorativas en diferentes colores y formas.</p>
-      <span class="cat-arrow">→</span>
-    </a>
-    <a class="cat-card" href="#productos" onclick="filterProducts('religioso', document.querySelectorAll('.filter-btn')[4])">
-      <span class="cat-icon">🙏</span><h3 class="cat-name">Artículos Religiosos</h3>
-      <p class="cat-desc">Candiles, figuras y decoración religiosa artesanal para el hogar.</p>
-      <span class="cat-arrow">→</span>
-    </a>
-    <a class="cat-card" href="#productos" onclick="filterProducts('juguetes', document.querySelectorAll('.filter-btn')[5])">
-      <span class="cat-icon">🧸</span><h3 class="cat-name">Juguetes</h3>
-      <p class="cat-desc">Juguetes artesanales en madera, únicos y seguros para los más pequeños.</p>
-      <span class="cat-arrow">→</span>
-    </a>
-    <a class="cat-card" href="#productos" onclick="filterProducts('holistico', document.querySelectorAll('.filter-btn')[6])">
-      <span class="cat-icon">🔮</span><h3 class="cat-name">Holístico</h3>
-      <p class="cat-desc">Productos para el bienestar del alma: aromaterapia, cristales, velas meditativas y más.</p>
-      <span class="cat-arrow">→</span>
-    </a>
-    <a class="cat-card" href="#contacto">
-      <span class="cat-icon">🎁</span><h3 class="cat-name">Pedidos Especiales</h3>
-      <p class="cat-desc">Diseños personalizados con grabado de nombres, fechas y logotipos.</p>
-      <span class="cat-arrow">→</span>
-    </a>
+    <a class="cat-card" href="#productos" onclick="filterProducts('velas',document.querySelectorAll('.filter-btn')[1])"><span class="cat-icon">🕯️</span><h3 class="cat-name">Velas & Jardines</h3><p class="cat-desc">Velas artesanales y jardines con forma de suculentas y cactus en cera.</p><span class="cat-arrow">→</span></a>
+    <a class="cat-card" href="#productos" onclick="filterProducts('madera',document.querySelectorAll('.filter-btn')[2])"><span class="cat-icon">🪵</span><h3 class="cat-name">Madera & Láser</h3><p class="cat-desc">Piezas decorativas cortadas y grabadas con precisión láser en madera natural.</p><span class="cat-arrow">→</span></a>
+    <a class="cat-card" href="#productos" onclick="filterProducts('cemento',document.querySelectorAll('.filter-btn')[3])"><span class="cat-icon">🏺</span><h3 class="cat-name">Cemento & Arte</h3><p class="cat-desc">Vasijas y macetas de cemento decorativas en diferentes colores y formas.</p><span class="cat-arrow">→</span></a>
+    <a class="cat-card" href="#productos" onclick="filterProducts('religioso',document.querySelectorAll('.filter-btn')[4])"><span class="cat-icon">🙏</span><h3 class="cat-name">Artículos Religiosos</h3><p class="cat-desc">Candiles, figuras y decoración religiosa artesanal para el hogar.</p><span class="cat-arrow">→</span></a>
+    <a class="cat-card" href="#productos" onclick="filterProducts('holistico',document.querySelectorAll('.filter-btn')[6])"><span class="cat-icon">🔮</span><h3 class="cat-name">Holístico</h3><p class="cat-desc">Productos para el bienestar del alma: aromaterapia, cristales y velas meditativas.</p><span class="cat-arrow">→</span></a>
+    <a class="cat-card" href="#productos" onclick="filterProducts('fechas',document.querySelectorAll('.filter-btn')[7])"><span class="cat-icon">📅</span><h3 class="cat-name">Fechas Especiales</h3><p class="cat-desc">Día de Madres, XV años, Navidad, Bodas, Baby Shower y muchas ocasiones más.</p><span class="cat-arrow">→</span></a>
+    <a class="cat-card" href="#productos" onclick="filterProducts('juguetes',document.querySelectorAll('.filter-btn')[5])"><span class="cat-icon">🧸</span><h3 class="cat-name">Juguetes</h3><p class="cat-desc">Juguetes artesanales en madera, únicos y seguros para los más pequeños.</p><span class="cat-arrow">→</span></a>
+    <a class="cat-card" href="https://wa.me/524434929560?text=Hola%2C%20quisiera%20cotizar%20un%20pedido%20especial." target="_blank"><span class="cat-icon">🎁</span><h3 class="cat-name">Pedidos Especiales</h3><p class="cat-desc">Diseños personalizados con grabado de nombres, fechas y logotipos a pedido.</p><span class="cat-arrow">→</span></a>
   </div>
+</section>
+
+<!-- PROCESO DE COMPRA -->
+<section class="proceso-section">
+  <div style="text-align:center">
+    <span class="section-label">Así de fácil</span>
+    <h2 class="section-title">¿Cómo comprar?</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="proceso-grid">
+    <div class="proceso-step"><div class="proceso-num">1</div><div class="proceso-title">Elige tu favorito</div><div class="proceso-desc">Explora el catálogo y elige el producto que más te guste</div></div>
+    <div class="proceso-step"><div class="proceso-num">2</div><div class="proceso-title">Agrega o escribe</div><div class="proceso-desc">Agrégalo al carrito o envíanos mensaje por WhatsApp</div></div>
+    <div class="proceso-step"><div class="proceso-num">3</div><div class="proceso-title">Confirma detalles</div><div class="proceso-desc">Confirma personalización, disponibilidad y datos de envío</div></div>
+    <div class="proceso-step"><div class="proceso-num">4</div><div class="proceso-title">Realiza tu pago</div><div class="proceso-desc">SPEI, OXXO o el método que más te convenga</div></div>
+    <div class="proceso-step"><div class="proceso-num">5</div><div class="proceso-title">¡Recibe tu pedido!</div><div class="proceso-desc">Enviamos a toda la República o acordamos entrega</div></div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section class="eventos-section" id="eventos">
+  <span class="section-label">Para celebrar</span>
+  <h2 class="section-title">Detalles especiales para <em>momentos inolvidables</em></h2>
+  <div class="divider"></div>
+  <p style="color:var(--text-mid);max-width:580px;margin:0 auto 8px;font-size:15px;font-weight:300;line-height:1.8">Creamos recuerdos, velas y piezas personalizadas para eventos, celebraciones y regalos únicos. Cuéntanos tu idea y te ayudamos a prepararla.</p>
+  <div class="eventos-chips">
+    <span class="eventos-chip">💐 Día de las Madres</span>
+    <span class="eventos-chip">👑 XV Años</span>
+    <span class="eventos-chip">💍 Bodas</span>
+    <span class="eventos-chip">🍼 Baby Shower</span>
+    <span class="eventos-chip">🎓 Graduaciones</span>
+    <span class="eventos-chip">🕊️ Bautizos</span>
+    <span class="eventos-chip">❤️ San Valentín</span>
+    <span class="eventos-chip">🎄 Navidad</span>
+    <span class="eventos-chip">💀 Día de Muertos</span>
+    <span class="eventos-chip">🎂 Cumpleaños</span>
+    <span class="eventos-chip">🥂 Aniversarios</span>
+    <span class="eventos-chip">🏢 Eventos empresariales</span>
+  </div>
+  <a class="btn btn-primary" href="https://wa.me/524434929560?text=Hola%2C%20quisiera%20cotizar%20para%20mi%20evento." target="_blank">💬 Cotizar para mi evento</a>
 </section>
 
 <!-- NOSOTROS -->
-<section id="nosotros">
-  <div class="usp-grid">
-    <div class="usp-text">
-      <p class="section-eyebrow">Sobre nosotros</p>
-      <h2>Hecho con <em>amor</em> y precisión láser</h2>
-      <p>Somos un taller artesanal que combina técnicas tradicionales con tecnología de corte y grabado láser para crear piezas únicas. Cada producto sale de nuestras manos con cuidado y detalle.</p>
-      <ul class="usp-list">
-        <li><div class="usp-dot"></div><span>Corte y grabado láser de alta precisión en madera, acrílico y más.</span></li>
-        <li><div class="usp-dot"></div><span>Velas artesanales elaboradas con materiales de calidad para un aroma duradero.</span></li>
-        <li><div class="usp-dot"></div><span>Diseños personalizados con nombres, fechas y logotipos a pedido.</span></li>
-        <li><div class="usp-dot"></div><span>Envíos a todo México y atención directa por WhatsApp.</span></li>
-      </ul>
-    </div>
-    <div>
-      <div class="usp-visual">🏭
-        <div class="usp-stat">
-          <div class="usp-stat-item"><span class="usp-stat-num">1000+</span><span class="usp-stat-label" style="font-size:21px;">Productos</span></div>
-          <div class="usp-stat-item"><span class="usp-stat-num">500+</span><span class="usp-stat-label" style="font-size:21px;">Clientes satisfechos</span></div>
-          <div class="usp-stat-item"><span class="usp-stat-num">100%</span><span class="usp-stat-label" style="font-size:21px;color:red;">Artesanal</span></div>
+<section class="nosotros-section" id="nosotros">
+  <div class="nosotros-grid">
+    <div class="nosotros-visual">
+      <div class="nosotros-img-box">🏭
+        <div class="nosotros-stats">
+          <div class="stat-item"><span class="stat-num">1000+</span><div class="stat-label">Productos</div></div>
+          <div class="stat-item"><span class="stat-num">500+</span><div class="stat-label">Clientes</div></div>
+          <div class="stat-item"><span class="stat-num" style="color:var(--terra)">100%</span><div class="stat-label" style="color:var(--terra)">Artesanal</div></div>
         </div>
       </div>
+    </div>
+    <div class="nosotros-text">
+      <span class="section-label">Sobre nosotros</span>
+      <h2 class="section-title">Hecho con <em>amor</em> y precisión láser</h2>
+      <p>Somos un taller artesanal en Michoacán que combina técnicas tradicionales con tecnología de corte y grabado láser. Cada pieza sale de nuestras manos con dedicación, cuidando los detalles para que recibas un producto bonito, especial y listo para regalar.</p>
+      <ul class="usp-list">
+        <li><div class="usp-dot">✓</div><span class="usp-text">Productos hechos a mano con materiales de calidad</span></li>
+        <li><div class="usp-dot">✓</div><span class="usp-text">Corte y grabado láser de alta precisión</span></li>
+        <li><div class="usp-dot">✓</div><span class="usp-text">Personalización con nombres, logos y dedicatorias</span></li>
+        <li><div class="usp-dot">✓</div><span class="usp-text">Empaque bonito, listo para regalar</span></li>
+        <li><div class="usp-dot">✓</div><span class="usp-text">Atención directa y envíos a toda la República</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALES -->
+<!-- TESTIMONIOS -->
 <section class="test-section">
-  <div class="section-header">
-    <div><p class="section-eyebrow">Reseñas</p><h2 class="section-title">Lo que dicen nuestros clientes</h2></div>
+  <div style="text-align:center">
+    <span class="section-label" style="color:var(--gold-light)">Reseñas</span>
+    <h2 class="section-title" style="color:var(--white)">Lo que dicen nuestros clientes</h2>
+    <div class="divider" style="background:var(--gold-light)"></div>
   </div>
   <div class="test-grid">
-    <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">Me encantó la base mariposa de madera. El trabajo es increíble, se nota que cada pieza es hecha con mucho cuidado.</p><div class="test-author"><strong>María G.</strong> Ciudad de México</div></div>
-    <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">Pedí unas velas con jardín de suculentas para un regalo y quedaron preciosas. La persona no podía creer que fueran hechas a mano.</p><div class="test-author"><strong>Lupita R.</strong> Guadalajara</div></div>
-    <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">Las vasijas de cemento son únicas. Tengo tres en mi sala y siempre recibo comentarios. El envío llegó rápido y bien empacado.</p><div class="test-author"><strong>Carlos M.</strong> Monterrey</div></div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"Me encantó el detalle, llegó muy bonito y listo para regalar. La calidad es increíble."</p><div class="test-author"><strong>María G.</strong><span>Ciudad de México</span></div></div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"La atención fue excelente y personalizaron justo lo que necesitaba. Volveré a pedir."</p><div class="test-author"><strong>Lupita R.</strong><span>Guadalajara</span></div></div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><p class="test-text">"Las velas huelen delicioso y se ven muy elegantes. Todos me preguntaron dónde las compré."</p><div class="test-author"><strong>Carlos M.</strong><span>Monterrey</span></div></div>
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto">
-  <div class="section-header">
-    <div><p class="section-eyebrow">Contacto</p><h2 class="section-title">Hacer un pedido</h2></div>
+<section class="contacto-section" id="contacto">
+  <div style="text-align:center;margin-bottom:56px">
+    <span class="section-label">Contacto</span>
+    <h2 class="section-title">¿Te gustó algo? <em>Escríbenos</em></h2>
+    <div class="divider"></div>
   </div>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h2>¿Te gustó algo?<br><em>Escríbenos</em></h2>
+  <div class="contacto-grid">
+    <div class="contacto-info">
       <p>Respondemos rápido por WhatsApp. También puedes enviarnos un mensaje aquí y te contactamos en menos de 24 horas.</p>
       <div class="contact-channels">
-        <a class="contact-channel" href="https://wa.me/524434929560?text=Hola,%20quiero%20hacer%20un%20pedido" target="_blank">
-          <span class="ch-icon">💬</span><div><div class="ch-label">WhatsApp</div><div class="ch-value">Respuesta inmediata</div></div>
-        </a>
-        <a class="contact-channel" href="https://instagram.com/que.bonita.vela" target="_blank">
-          <span class="ch-icon">📸</span><div><div class="ch-label">Instagram</div><div class="ch-value">@que.bonita.vela</div></div>
-        </a>
+        <a class="contact-channel" href="https://wa.me/524434929560?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Que%20Bonita%20Vela%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n." target="_blank"><span class="ch-icon">💬</span><div><div class="ch-label">WhatsApp</div><div class="ch-value">+52 443 492 9560</div></div></a>
+        <a class="contact-channel" href="https://instagram.com/que.bonita.vela" target="_blank"><span class="ch-icon">📸</span><div><div class="ch-label">Instagram</div><div class="ch-value">@que.bonita.vela</div></div></a>
       </div>
     </div>
     <div class="contact-form">
@@ -600,11 +681,12 @@
           <option value="">Selecciona una categoría</option>
           <option>Velas artesanales</option><option>Jardines de suculentas/cactus</option>
           <option>Decoración en madera (láser)</option><option>Vasijas de cemento</option>
-          <option>Artículos religiosos</option><option>Juguetes</option><option>Holístico</option><option>Pedido personalizado</option>
+          <option>Artículos religiosos</option><option>Juguetes</option>
+          <option>Holístico</option><option>Fechas Especiales</option><option>Pedido personalizado</option>
         </select>
       </div>
-      <div class="form-field"><label>Mensaje</label><textarea id="ctaMsg" placeholder="Cuéntanos qué necesitas..."></textarea></div>
-      <button class="form-submit" onclick="sendWA()">Enviar por WhatsApp →</button>
+      <div class="form-field"><label>Mensaje</label><textarea id="ctaMsg" placeholder="Cuéntanos qué necesitas, cantidad, personalización..."></textarea></div>
+      <button class="form-submit" onclick="sendWA()">💬 Enviar por WhatsApp →</button>
     </div>
   </div>
 </section>
@@ -612,20 +694,22 @@
 <!-- FOOTER -->
 <footer class="footer-full">
   <div class="footer-top">
-    <div class="footer-brand">
-      <img src="logo.jpeg" alt="Que Bonita Vela" style="height:64px;width:auto;display:block;margin-bottom:10px;">
-      <p>Artesanía hecha con amor en México. Corte láser, velas, madera, cemento y mucho más.</p>
+    <div>
+      <div class="footer-brand-logo"><img src="logo.jpeg" alt="Que Bonita Vela"></div>
+      <p class="footer-brand-tagline">Detalles artesanales que iluminan, decoran y hacen especial cada momento.</p>
     </div>
     <div class="footer-col">
       <h4>Tienda</h4>
       <a href="#productos">Todos los productos</a>
       <a href="#categorias">Categorías</a>
+      <a href="#eventos">Eventos y regalos</a>
       <a href="#contacto">Hacer un pedido</a>
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
-      <a href="https://wa.me/524434929560" target="_blank">WhatsApp</a>
-      <a href="https://instagram.com/que.bonita.vela" target="_blank">Instagram</a>
+      <a href="https://wa.me/524434929560" target="_blank">💬 WhatsApp</a>
+      <a href="https://instagram.com/que.bonita.vela" target="_blank">📸 @que.bonita.vela</a>
+      <a href="https://quebonitavela.com">🌐 quebonitavela.com</a>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
@@ -633,13 +717,11 @@
       <button onclick="openPrivacy('terminos')">Términos y Condiciones</button>
       <button onclick="openPrivacy('envios')">Política de Envíos</button>
       <button onclick="openPrivacy('devoluciones')">Devoluciones</button>
+      <button onclick="openPrivacy('cookies')">Cookies</button>
     </div>
   </div>
   <div class="footer-bottom">
-    <div style="display:flex;align-items:center;gap:14px;">
-      <img src="logo.jpeg" alt="Que Bonita Vela" style="height:36px;width:auto;display:block;">
-      <span style="font-size:12px;color:var(--gray-light);">© 2026 · Todos los derechos reservados</span>
-    </div>
+    <span class="footer-copy">© 2026 Que Bonita Vela · Todos los derechos reservados · Hecho con ❤️ en Michoacán, México</span>
     <div class="footer-bottom-links">
       <button onclick="openPrivacy('aviso')">Privacidad</button>
       <button onclick="openPrivacy('terminos')">Términos</button>
@@ -648,38 +730,8 @@
   </div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a class="wa-float" href="https://wa.me/524434929560?text=Hola,%20vi%20su%20página" target="_blank">💬</a>
-
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p>🍪 Usamos cookies para mejorar tu experiencia en nuestra tienda. Al continuar navegando aceptas nuestra <a onclick="openPrivacy('cookies')">Política de Cookies</a> y <a onclick="openPrivacy('aviso')">Aviso de Privacidad</a>.</p>
-  <div class="cookie-btns">
-    <button class="cookie-btn-reject" onclick="rejectCookies()">Solo esenciales</button>
-    <button class="cookie-btn-accept" onclick="acceptCookies()">Aceptar todas ✓</button>
-  </div>
-</div>
-
-<!-- PRIVACY MODAL -->
-<div class="privacy-overlay" id="privacyOverlay" onclick="closePrivacyOutside(event)">
-  <div class="privacy-modal">
-    <div class="privacy-modal-header">
-      <h2 id="privacyTitle">Aviso de Privacidad</h2>
-      <button class="checkout-modal-close" onclick="closePrivacy()">✕</button>
-    </div>
-    <div class="privacy-modal-tabs" id="privacyTabs">
-      <div class="privacy-tab active" onclick="openPrivacy('aviso')">Aviso de Privacidad</div>
-      <div class="privacy-tab" onclick="openPrivacy('terminos')">Términos y Condiciones</div>
-      <div class="privacy-tab" onclick="openPrivacy('envios')">Envíos</div>
-      <div class="privacy-tab" onclick="openPrivacy('devoluciones')">Devoluciones</div>
-      <div class="privacy-tab" onclick="openPrivacy('cookies')">Cookies</div>
-    </div>
-    <div class="privacy-modal-body" id="privacyBody"></div>
-    <div class="privacy-modal-footer">
-      <button class="privacy-close-btn" onclick="closePrivacy()">Entendido ✓</button>
-    </div>
-  </div>
-</div>
+<!-- WA FLOAT -->
+<a class="wa-float" href="https://wa.me/524434929560?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Que%20Bonita%20Vela%20y%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n." target="_blank">💬</a>
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
@@ -687,10 +739,7 @@
 <!-- CART OVERLAY + DRAWER -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-drawer" id="cartDrawer">
-  <div class="cart-header">
-    <h2>🛒 Mi carrito</h2>
-    <button class="cart-close" onclick="closeCart()">✕</button>
-  </div>
+  <div class="cart-header"><h2>🛒 Mi carrito</h2><button class="cart-close" onclick="closeCart()">✕</button></div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-footer" id="cartFooter" style="display:none">
     <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">$0</span></div>
@@ -705,10 +754,7 @@
 <!-- CHECKOUT MODAL -->
 <div class="checkout-overlay" id="checkoutOverlay">
   <div class="checkout-modal">
-    <div class="checkout-modal-header">
-      <h2 id="checkoutTitle">Finalizar compra</h2>
-      <button class="checkout-modal-close" onclick="closeCheckout()">✕</button>
-    </div>
+    <div class="checkout-modal-header"><h2 id="checkoutTitle">Finalizar compra</h2><button class="checkout-modal-close" onclick="closeCheckout()">✕</button></div>
     <div class="checkout-steps">
       <div class="checkout-step active" id="step1tab">1. Datos</div>
       <div class="checkout-step" id="step2tab">2. Resumen</div>
@@ -718,592 +764,215 @@
   </div>
 </div>
 
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>🍪 Usamos cookies para mejorar tu experiencia. Al continuar aceptas nuestra <a onclick="openPrivacy('cookies')">Política de Cookies</a> y <a onclick="openPrivacy('aviso')">Aviso de Privacidad</a>.</p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-reject" onclick="rejectCookies()">Solo esenciales</button>
+    <button class="cookie-btn-accept" onclick="acceptCookies()">Aceptar ✓</button>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="privacy-overlay" id="privacyOverlay" onclick="closePrivacyOutside(event)">
+  <div class="privacy-modal">
+    <div class="privacy-modal-header"><h2 id="privacyTitle">Aviso de Privacidad</h2><button class="checkout-modal-close" onclick="closePrivacy()">✕</button></div>
+    <div class="privacy-modal-tabs" id="privacyTabs">
+      <div class="privacy-tab active" onclick="openPrivacy('aviso')">Aviso de Privacidad</div>
+      <div class="privacy-tab" onclick="openPrivacy('terminos')">Términos y Condiciones</div>
+      <div class="privacy-tab" onclick="openPrivacy('envios')">Envíos</div>
+      <div class="privacy-tab" onclick="openPrivacy('devoluciones')">Devoluciones</div>
+      <div class="privacy-tab" onclick="openPrivacy('cookies')">Cookies</div>
+    </div>
+    <div class="privacy-modal-body" id="privacyBody"></div>
+    <div class="privacy-modal-footer"><button class="privacy-close-btn" onclick="closePrivacy()">Entendido ✓</button></div>
+  </div>
+</div>
+
 <script>
-// ── PRODUCTS DATA ──
+// ── PRODUCTS ──
 const products = [
-  { id:1, cat:'velas', emoji:'🕯️', name:'Vela artesanal decorativa', price:120, badge:'', desc:'Vela hecha a mano con aromas naturales. Disponible en varios colores y fragancias.' },
-  { id:2, cat:'velas', emoji:'🌵', name:'Jardín de cactus en cera', price:180, badge:'Popular', desc:'Jardín con forma de cactus y suculentas elaborado en cera de alta calidad.' },
-  { id:3, cat:'velas', emoji:'🌸', name:'Jardín de suculentas', price:180, badge:'', desc:'Arreglo floral en cera con forma de suculentas. Perfecto para regalar.' },
-  { id:4, cat:'madera', emoji:'🦋', name:'Base mariposa decorativa', price:220, badge:'Nuevo', desc:'Base con diseño de mariposa cortada en madera con láser de alta precisión.' },
-  { id:5, cat:'madera', emoji:'🪵', name:'Figura decorativa en madera', price:150, badge:'', desc:'Pieza decorativa grabada con láser. Diseños personalizados disponibles.' },
-  { id:6, cat:'cemento', emoji:'🏺', name:'Vasija de cemento decorativa', price:130, badge:'', desc:'Pequeña vasija de cemento en varios colores. Perfecta para suculentas.' },
-  { id:7, cat:'religioso', emoji:'🙏', name:'Candil artesanal virgen', price:250, badge:'', desc:'Candil religioso elaborado en madera con corte láser. Diseño artesanal único.' },
-  { id:8, cat:'juguetes', emoji:'🧸', name:'Juguete en madera', price:90, badge:'', desc:'Juguete artesanal en madera con corte láser. Seguro y duradero.' },
-  { id:9, cat:'holistico', emoji:'🔮', name:'Vela meditativa aromática', price:160, badge:'Nuevo', desc:'Vela artesanal especialmente diseñada para meditación y bienestar, con aromas relajantes.' },
-  { id:10, cat:'holistico', emoji:'🌙', name:'Set de aromaterapia', price:200, badge:'', desc:'Set holístico para equilibrar energías y crear ambientes de paz y armonía en tu hogar.' },
+  {id:1,cat:'velas',emoji:'🕯️',name:'Vela artesanal decorativa',price:120,badge:'',desc:'Vela hecha a mano con aromas naturales. Crea un ambiente cálido y relajante en cualquier espacio.'},
+  {id:2,cat:'velas',emoji:'🌵',name:'Jardín de cactus en cera',price:180,badge:'Popular',desc:'Jardín con forma de cactus y suculentas elaborado en cera de alta calidad. Decorativo y aromático.'},
+  {id:3,cat:'velas',emoji:'🌸',name:'Jardín de suculentas',price:180,badge:'',desc:'Arreglo floral en cera con forma de suculentas. Perfecto para regalar o decorar con amor.'},
+  {id:4,cat:'madera',emoji:'🦋',name:'Base mariposa decorativa',price:220,badge:'Nuevo',desc:'Base con diseño de mariposa calada en madera con láser de alta precisión. Ideal para velas o plantas.'},
+  {id:5,cat:'madera',emoji:'🪵',name:'Figura decorativa en madera',price:150,badge:'',desc:'Pieza decorativa grabada con láser. Diseños personalizados con nombre o fecha disponibles.'},
+  {id:6,cat:'cemento',emoji:'🏺',name:'Vasija de cemento decorativa',price:130,badge:'',desc:'Pequeña vasija de cemento en varios colores. Perfecta para suculentas o como objeto decorativo.'},
+  {id:7,cat:'religioso',emoji:'🙏',name:'Candil artesanal virgen',price:250,badge:'',desc:'Candil religioso elaborado en madera con corte láser. Pieza única ideal para el hogar o regalar.'},
+  {id:8,cat:'juguetes',emoji:'🧸',name:'Juguete en madera',price:90,badge:'',desc:'Juguete artesanal en madera con corte láser. Seguro, duradero y único para los más pequeños.'},
+  {id:9,cat:'holistico',emoji:'🔮',name:'Vela meditativa aromática',price:160,badge:'Nuevo',desc:'Vela artesanal diseñada para meditación y bienestar. Aromas relajantes para equilibrar tu energía.'},
+  {id:10,cat:'holistico',emoji:'🌙',name:'Set de aromaterapia',price:200,badge:'',desc:'Set holístico para equilibrar energías y crear ambientes de paz y armonía en tu hogar.'},
+  {id:11,cat:'fechas',fecha:'Día de las Madres',emoji:'💐',name:'Arreglo Día de las Madres',price:280,badge:'Popular',desc:'Set especial con vela artesanal y base decorativa. El regalo perfecto para mamá.'},
+  {id:12,cat:'fechas',fecha:'XV Años',emoji:'👑',name:'Recuerdo XV Años personalizado',price:180,badge:'',desc:'Recuerdo artesanal grabado con nombre y fecha. Ideal para quinceañeras, único y memorable.'},
+  {id:13,cat:'fechas',fecha:'Navidad',emoji:'🎄',name:'Adorno navideño en madera',price:120,badge:'',desc:'Decoración navideña cortada en madera con diseños únicos y elegantes de temporada.'},
+  {id:14,cat:'fechas',fecha:'Bodas',emoji:'💍',name:'Recuerdo de boda personalizado',price:160,badge:'',desc:'Recuerdo elegante con nombres de los novios y fecha especial grabada con láser.'},
+  {id:15,cat:'fechas',fecha:'Baby Shower',emoji:'🍼',name:'Recuerdo Baby Shower',price:90,badge:'',desc:'Lindo recuerdo artesanal para baby shower. Personalizable con el nombre del bebé.'},
+  {id:16,cat:'fechas',fecha:'San Valentín',emoji:'❤️',name:'Set romántico San Valentín',price:220,badge:'',desc:'Set de vela y base decorativa ideal para expresar amor en San Valentín.'},
+  {id:17,cat:'fechas',fecha:'Día de Muertos',emoji:'💀',name:'Ofrenda decorativa Día de Muertos',price:200,badge:'',desc:'Pieza decorativa artesanal temática del Día de Muertos, cortada en madera con detalle.'},
+  {id:18,cat:'fechas',fecha:'Primera Comunión',emoji:'✝️',name:'Recuerdo Primera Comunión',price:100,badge:'',desc:'Recuerdo artesanal grabado con nombre y fecha para primera comunión o bautizo.'},
 ];
 
-// ── CART STATE ──
-let cart = [];
+function fmt(n){return '$'+n.toLocaleString('es-MX')}
+let cart=[];
+function cartTotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
 
-function fmt(n) { return '$' + n.toLocaleString('es-MX'); }
-
-function cartTotal() { return cart.reduce((s,i) => s + i.price * i.qty, 0); }
-
-function updateCartCount() {
-  const total = cart.reduce((s,i) => s + i.qty, 0);
-  const el = document.getElementById('cartCount');
-  el.textContent = total;
-  el.classList.toggle('hidden', total === 0);
+function updateCartCount(){
+  const t=cart.reduce((s,i)=>s+i.qty,0);
+  const el=document.getElementById('cartCount');
+  el.textContent=t;el.classList.toggle('hidden',t===0);
 }
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
 }
-
-function addToCart(id, btnEl) {
-  const p = products.find(x => x.id === id);
-  const existing = cart.find(x => x.id === id);
-  if (existing) { existing.qty++; }
-  else { cart.push({ ...p, qty: 1 }); }
-  updateCartCount();
-  showToast('✓ ' + p.emoji + ' ' + p.name + ' agregado');
-  if (btnEl) {
-    btnEl.textContent = '✓ Agregado';
-    btnEl.classList.add('added');
-    setTimeout(() => { btnEl.textContent = '+ Agregar al carrito'; btnEl.classList.remove('added'); }, 1500);
-  }
+function addToCart(id,btn){
+  const p=products.find(x=>x.id===id);
+  const ex=cart.find(x=>x.id===id);
+  if(ex)ex.qty++;else cart.push({...p,qty:1});
+  updateCartCount();showToast('✓ '+p.emoji+' '+p.name+' agregado');
+  if(btn){btn.textContent='✓ Agregado';btn.classList.add('added');setTimeout(()=>{btn.textContent='+ Agregar al carrito';btn.classList.remove('added')},1500)}
   renderCartItems();
 }
-
-function changeQty(id, delta) {
-  const item = cart.find(x => x.id === id);
-  if (!item) return;
-  item.qty += delta;
-  if (item.qty <= 0) cart = cart.filter(x => x.id !== id);
-  updateCartCount();
-  renderCartItems();
+function changeQty(id,delta){
+  const item=cart.find(x=>x.id===id);if(!item)return;
+  item.qty+=delta;if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+  updateCartCount();renderCartItems();
 }
-
-function removeFromCart(id) {
-  cart = cart.filter(x => x.id !== id);
-  updateCartCount();
-  renderCartItems();
+function removeFromCart(id){cart=cart.filter(x=>x.id!==id);updateCartCount();renderCartItems()}
+function renderCartItems(){
+  const el=document.getElementById('cartItems');const footer=document.getElementById('cartFooter');
+  if(cart.length===0){el.innerHTML=`<div class="cart-empty"><span class="cart-empty-icon">🛒</span><p>Tu carrito está vacío.<br>Agrega productos para comenzar.</p></div>`;footer.style.display='none';return}
+  footer.style.display='block';
+  el.innerHTML=cart.map(item=>`<div class="cart-item"><div class="cart-item-emoji">${item.emoji}</div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${fmt(item.price)} c/u</div><div class="cart-item-controls"><button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${item.id},1)">+</button><button class="cart-item-remove" onclick="removeFromCart(${item.id})">🗑</button></div></div></div>`).join('');
+  const sub=cartTotal();
+  document.getElementById('cartSubtotal').textContent=fmt(sub);
+  document.getElementById('cartTotal').textContent=fmt(sub);
 }
-
-function renderCartItems() {
-  const el = document.getElementById('cartItems');
-  const footer = document.getElementById('cartFooter');
-  if (cart.length === 0) {
-    el.innerHTML = `<div class="cart-empty"><span class="cart-empty-icon">🛒</span><p>Tu carrito está vacío.<br>Agrega productos para comenzar.</p></div>`;
-    footer.style.display = 'none';
-    return;
-  }
-  footer.style.display = 'block';
-  el.innerHTML = cart.map(item => `
-    <div class="cart-item">
-      <div class="cart-item-emoji">${item.emoji}</div>
-      <div class="cart-item-info">
-        <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-price">${fmt(item.price)} c/u</div>
-        <div class="cart-item-controls">
-          <button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button>
-          <span class="qty-num">${item.qty}</span>
-          <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
-          <button class="cart-item-remove" onclick="removeFromCart(${item.id})">🗑</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-  const sub = cartTotal();
-  document.getElementById('cartSubtotal').textContent = fmt(sub);
-  document.getElementById('cartTotal').textContent = fmt(sub);
-}
-
-function openCart() {
-  document.getElementById('cartOverlay').classList.add('open');
-  document.getElementById('cartDrawer').classList.add('open');
-  renderCartItems();
-}
-function closeCart() {
-  document.getElementById('cartOverlay').classList.remove('open');
-  document.getElementById('cartDrawer').classList.remove('open');
-}
+function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartDrawer').classList.add('open');renderCartItems()}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('open');document.getElementById('cartDrawer').classList.remove('open')}
 
 // ── PRODUCTS RENDER ──
-function renderProducts(filter) {
-  const grid = document.getElementById('productGrid');
-  const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
-  grid.innerHTML = filtered.map(p => `
-    <div class="product-card">
-      <div class="product-img">
-        <div class="product-img-inner">${p.emoji}</div>
-        ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-      </div>
-      <div class="product-info">
-        <p class="product-cat">${p.cat}</p>
-        <p class="product-name">${p.name}</p>
-        <div class="product-footer">
-          <span class="product-price">${fmt(p.price)}</span>
-        </div>
-        <button class="add-to-cart-btn" onclick="addToCart(${p.id}, this)">+ Agregar al carrito</button>
-      </div>
-    </div>
-  `).join('');
+function renderProducts(filter){
+  const grid=document.getElementById('productGrid');
+  const filtered=filter==='all'?products:products.filter(p=>p.cat===filter);
+  if(filtered.length===0){grid.innerHTML=`<div class="no-results" style="grid-column:1/-1"><span>🔍</span>Sin resultados. <a href="#contacto" style="color:var(--terra)">Escríbenos</a> para un pedido especial.</div>`;return}
+  grid.innerHTML=filtered.map(p=>`<div class="product-card"><div class="product-img"><div class="product-img-inner">${p.emoji}</div>${p.badge?`<span class="product-badge">${p.badge}</span>`:''}</div><div class="product-info"><p class="product-cat">${p.cat}</p><p class="product-name">${p.name}</p><p class="product-desc">${p.desc}</p><div class="product-footer"><span class="product-price">${fmt(p.price)}</span></div><button class="add-to-cart-btn" onclick="addToCart(${p.id},this)">+ Agregar al carrito</button></div></div>`).join('');
+}
+function filterProducts(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  renderProducts(cat);
+}
+function filterByFecha(fecha){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn')[7]?.classList.add('active');
+  const grid=document.getElementById('productGrid');
+  const filtered=products.filter(p=>p.cat==='fechas'&&(!fecha||p.fecha===fecha));
+  if(filtered.length===0){grid.innerHTML=`<div class="no-results" style="grid-column:1/-1"><span>📅</span>Próximamente productos para <strong>${fecha}</strong>.<br><a href="#contacto" style="color:var(--terra)">Escríbenos</a> para un pedido especial.</div>`;return}
+  grid.innerHTML=filtered.map(p=>`<div class="product-card"><div class="product-img"><div class="product-img-inner">${p.emoji}</div>${p.badge?`<span class="product-badge">${p.badge}</span>`:''}<span style="position:absolute;bottom:10px;left:10px;background:rgba(193,127,90,.9);color:#fff;font-size:10px;padding:3px 8px;border-radius:50px;">${p.fecha||''}</span></div><div class="product-info"><p class="product-cat">${p.fecha||'Fechas especiales'}</p><p class="product-name">${p.name}</p><p class="product-desc">${p.desc}</p><div class="product-footer"><span class="product-price">${fmt(p.price)}</span></div><button class="add-to-cart-btn" onclick="addToCart(${p.id},this)">+ Agregar al carrito</button></div></div>`).join('');
+  document.getElementById('productos').scrollIntoView({behavior:'smooth'});
 }
 
-function filterProducts(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-  renderProducts(cat);
+// ── SEARCH ──
+function normalizeText(str){return str.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+function searchProducts(query){
+  const q=normalizeText(query.trim());
+  const countEl=document.getElementById('searchCount');
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn')[0]?.classList.add('active');
+  if(!q){renderProducts('all');countEl.textContent='';return}
+  const keywords=q.split(' ').filter(Boolean);
+  const filtered=products.filter(p=>{
+    const h=normalizeText(`${p.name} ${p.cat} ${p.desc} ${p.badge||''} ${p.fecha||''}`);
+    return keywords.every(k=>h.includes(k));
+  });
+  const grid=document.getElementById('productGrid');
+  if(filtered.length===0){grid.innerHTML=`<div class="no-results" style="grid-column:1/-1"><span>🔍</span>Sin resultados para "<strong>${query}</strong>".<br><a href="#contacto" style="color:var(--terra)">Escríbenos</a> y te ayudamos.</div>`;countEl.textContent='Sin resultados';return}
+  grid.innerHTML=filtered.map(p=>`<div class="product-card"><div class="product-img"><div class="product-img-inner">${p.emoji}</div>${p.badge?`<span class="product-badge">${p.badge}</span>`:''}</div><div class="product-info"><p class="product-cat">${p.cat}</p><p class="product-name">${p.name}</p><p class="product-desc">${p.desc}</p><div class="product-footer"><span class="product-price">${fmt(p.price)}</span></div><button class="add-to-cart-btn" onclick="addToCart(${p.id},this)">+ Agregar al carrito</button></div></div>`).join('');
+  countEl.textContent=`${filtered.length} producto${filtered.length!==1?'s':''} encontrado${filtered.length!==1?'s':''}`;
+}
+function navSearch(query){
+  const mi=document.getElementById('searchInput');if(mi)mi.value=query;
+  searchProducts(query);
 }
 
 // ── CHECKOUT ──
-let checkoutStep = 1;
-let customerData = {};
-
-function openCheckout() {
-  if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
-  closeCart();
-  checkoutStep = 1;
-  document.getElementById('checkoutOverlay').classList.add('open');
-  renderCheckoutStep();
-}
-
-function closeCheckout() {
-  document.getElementById('checkoutOverlay').classList.remove('open');
-}
-
-function setStepTabs(step) {
-  [1,2,3].forEach(i => {
-    const el = document.getElementById('step'+i+'tab');
-    el.classList.remove('active','done');
-    if (i < step) el.classList.add('done');
-    if (i === step) el.classList.add('active');
-  });
-}
-
-function renderCheckoutStep() {
+let checkoutStep=1,customerData={};
+function openCheckout(){if(cart.length===0){showToast('Tu carrito está vacío');return}closeCart();checkoutStep=1;document.getElementById('checkoutOverlay').classList.add('open');renderCheckoutStep()}
+function closeCheckout(){document.getElementById('checkoutOverlay').classList.remove('open')}
+function setStepTabs(step){[1,2,3].forEach(i=>{const el=document.getElementById('step'+i+'tab');el.classList.remove('active','done');if(i<step)el.classList.add('done');if(i===step)el.classList.add('active')})}
+function renderCheckoutStep(){
   setStepTabs(checkoutStep);
-  const body = document.getElementById('checkoutBody');
-  if (checkoutStep === 1) {
-    document.getElementById('checkoutTitle').textContent = 'Tus datos de entrega';
-    body.innerHTML = `
-      <h3 class="checkout-section-title">¿A dónde enviamos tu pedido?</h3>
-      <div class="co-form">
-        <div class="co-row">
-          <div class="co-field"><label>Nombre completo</label><input id="coNombre" type="text" placeholder="Tu nombre" value="${customerData.nombre||''}"></div>
-          <div class="co-field"><label>WhatsApp / Teléfono</label><input id="coTel" type="tel" placeholder="Tu número" value="${customerData.tel||''}"></div>
-        </div>
-        <div class="co-field"><label>Correo electrónico</label><input id="coEmail" type="email" placeholder="tu@correo.com" value="${customerData.email||''}"></div>
-        <div class="co-field"><label>Calle y número</label><input id="coCalle" type="text" placeholder="Ej. Av. Juárez 123" value="${customerData.calle||''}"></div>
-        <div class="co-row">
-          <div class="co-field"><label>Ciudad</label><input id="coCiudad" type="text" placeholder="Tu ciudad" value="${customerData.ciudad||''}"></div>
-          <div class="co-field"><label>Estado</label><input id="coEstado" type="text" placeholder="Ej. Michoacán" value="${customerData.estado||''}"></div>
-        </div>
-        <div class="co-row">
-          <div class="co-field"><label>Código postal</label><input id="coCP" type="text" placeholder="CP" value="${customerData.cp||''}"></div>
-          <div class="co-field"><label>País</label><input id="coPais" type="text" placeholder="México" value="${customerData.pais||'México'}"></div>
-        </div>
-        <div class="co-field"><label>Referencias (opcional)</label><textarea id="coRef" placeholder="Color del portón, piso, cómo llegar...">${customerData.ref||''}</textarea></div>
-        <div class="co-consent">
-          <input type="checkbox" id="coPrivacyConsent" ${customerData.privacyAccepted ? 'checked' : ''}>
-          <label for="coPrivacyConsent">He leído y acepto el <a onclick="openPrivacy('aviso')">Aviso de Privacidad</a> y los <a onclick="openPrivacy('terminos')">Términos y Condiciones</a> de Que Bonita Vela. *</label>
-        </div>
-      </div>
-      <div class="checkout-nav">
-        <button class="co-btn-back" onclick="closeCheckout()">← Volver</button>
-        <button class="co-btn-next" onclick="goStep2()">Continuar →</button>
-      </div>`;
-  } else if (checkoutStep === 2) {
-    document.getElementById('checkoutTitle').textContent = 'Resumen de tu pedido';
-    const sub = cartTotal();
-    body.innerHTML = `
-      <h3 class="checkout-section-title">Confirma tu pedido</h3>
-      <div class="order-summary-items">
-        ${cart.map(i => `
-          <div class="os-item">
-            <div class="os-item-left">
-              <span class="os-item-emoji">${i.emoji}</span>
-              <div><div class="os-item-name">${i.name}</div><div class="os-item-qty">× ${i.qty}</div></div>
-            </div>
-            <span class="os-item-price">${fmt(i.price * i.qty)}</span>
-          </div>`).join('')}
-      </div>
-      <div class="os-totals">
-        <div class="os-row"><span>Subtotal</span><span>${fmt(sub)}</span></div>
-        <div class="os-row"><span>Envío</span><span>A calcular</span></div>
-        <div class="os-row total"><span>Total estimado</span><span>${fmt(sub)}</span></div>
-      </div>
-      <div style="margin-top:20px;padding:14px;background:var(--gray-bg);border-radius:4px;font-size:13px;color:var(--gray-dark);line-height:1.7">
-        <strong style="display:block;margin-bottom:6px;color:var(--black)">📦 Datos de entrega</strong>
-        ${customerData.nombre} · ${customerData.tel}<br>
-        ${customerData.calle}, ${customerData.ciudad}, ${customerData.estado} ${customerData.cp}
-      </div>
-      <div class="checkout-nav">
-        <button class="co-btn-back" onclick="checkoutStep=1;renderCheckoutStep()">← Editar</button>
-        <button class="co-btn-next" onclick="checkoutStep=3;renderCheckoutStep()">Elegir pago →</button>
-      </div>`;
-  } else if (checkoutStep === 3) {
-    document.getElementById('checkoutTitle').textContent = 'Método de pago';
-    body.innerHTML = `
-      <h3 class="checkout-section-title">¿Cómo quieres pagar?</h3>
-      <div class="payment-methods">
-
-        <div class="pay-method selected" id="pm-transfer" onclick="selectPay('transfer')">
-          <div class="pay-method-header">
-            <input type="radio" name="pay" value="transfer" checked>
-            <span class="pay-method-label">Transferencia / SPEI</span>
-            <span class="pay-method-icons">🏦</span>
-          </div>
-          <div class="pay-method-body">
-            <div class="transfer-info">
-              <strong>Datos para transferencia:</strong>
-              Banco: BBVA<br>
-              Titular: Jesús Marbán Romero<br>
-              CLABE: 722969010898405381<br>
-              Concepto: Tu nombre + número de pedido<br><br>
-              <em>Envíanos el comprobante por WhatsApp para confirmar tu pedido.</em>
-            </div>
-          </div>
-        </div>
-
-        <div class="pay-method" id="pm-oxxo" onclick="selectPay('oxxo')">
-          <div class="pay-method-header">
-            <input type="radio" name="pay" value="oxxo">
-            <span class="pay-method-label">Pago en OXXO</span>
-            <span class="pay-method-icons">🏪</span>
-          </div>
-          <div class="pay-method-body">
-            <div class="oxxo-info">
-              <strong>Pago en efectivo en OXXO:</strong>
-              Al confirmar tu pedido tu número de cuenta para depósito es: <strong>2242170470188181</strong>. Paga en cualquier OXXO y envíanos tu comprobante. Tu pedido se procesa en 24 hrs.
-            </div>
-          </div>
-        </div>
-
-        <div class="pay-method" id="pm-wa" onclick="selectPay('wa')">
-          <div class="pay-method-header">
-            <input type="radio" name="pay" value="wa">
-            <span class="pay-method-label">Coordinar por WhatsApp</span>
-            <span class="pay-method-icons">💬</span>
-          </div>
-          <div class="pay-method-body">
-            <div class="transfer-info">
-              <strong>Coordinación directa:</strong>
-              Confirma tu pedido y te contactamos por WhatsApp para acordar el método de pago que más te convenga: efectivo, depósito, transferencia u otro.
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="checkout-nav">
-        <button class="co-btn-back" onclick="checkoutStep=2;renderCheckoutStep()">← Atrás</button>
-        <button class="co-btn-next" onclick="confirmOrder()">✓ Confirmar pedido</button>
-      </div>`;
-  } else if (checkoutStep === 4) {
-    document.getElementById('checkoutTitle').textContent = '¡Pedido confirmado!';
+  const body=document.getElementById('checkoutBody');
+  if(checkoutStep===1){
+    document.getElementById('checkoutTitle').textContent='Tus datos de entrega';
+    body.innerHTML=`<h3 class="checkout-section-title">¿A dónde enviamos tu pedido?</h3><div class="co-form"><div class="co-row"><div class="co-field"><label>Nombre completo <span class="req">*</span></label><input id="coNombre" type="text" placeholder="Tu nombre" value="${customerData.nombre||''}"><div class="field-error" id="err-coNombre">Campo obligatorio</div></div><div class="co-field"><label>WhatsApp <span class="req">*</span></label><input id="coTel" type="tel" placeholder="Tu número" value="${customerData.tel||''}"><div class="field-error" id="err-coTel">Campo obligatorio</div></div></div><div class="co-field"><label>Correo electrónico</label><input id="coEmail" type="email" placeholder="tu@correo.com" value="${customerData.email||''}"></div><div class="co-field"><label>Calle y número <span class="req">*</span></label><input id="coCalle" type="text" placeholder="Ej. Av. Juárez 123" value="${customerData.calle||''}"><div class="field-error" id="err-coCalle">Campo obligatorio</div></div><div class="co-row"><div class="co-field"><label>Ciudad <span class="req">*</span></label><input id="coCiudad" type="text" placeholder="Tu ciudad" value="${customerData.ciudad||''}"><div class="field-error" id="err-coCiudad">Campo obligatorio</div></div><div class="co-field"><label>Estado <span class="req">*</span></label><input id="coEstado" type="text" placeholder="Ej. Michoacán" value="${customerData.estado||''}"><div class="field-error" id="err-coEstado">Campo obligatorio</div></div></div><div class="co-row"><div class="co-field"><label>Código postal</label><input id="coCP" type="text" placeholder="CP" value="${customerData.cp||''}"></div><div class="co-field"><label>País</label><input id="coPais" type="text" placeholder="México" value="${customerData.pais||'México'}"></div></div><div class="co-field"><label>Referencias (opcional)</label><textarea id="coRef" placeholder="Color del portón, piso, cómo llegar...">${customerData.ref||''}</textarea></div><div class="co-consent"><input type="checkbox" id="coPrivacyConsent" ${customerData.privacyAccepted?'checked':''}><label for="coPrivacyConsent">He leído y acepto el <a onclick="openPrivacy('aviso')">Aviso de Privacidad</a> y los <a onclick="openPrivacy('terminos')">Términos y Condiciones</a>. *</label></div></div><div class="checkout-nav"><button class="co-btn-back" onclick="closeCheckout()">← Volver</button><button class="co-btn-next" onclick="goStep2()">Continuar →</button></div>`;
+  }else if(checkoutStep===2){
+    document.getElementById('checkoutTitle').textContent='Resumen de tu pedido';
+    const sub=cartTotal();
+    body.innerHTML=`<h3 class="checkout-section-title">Confirma tu pedido</h3><div class="order-summary-items">${cart.map(i=>`<div class="os-item"><div class="os-item-left"><span class="os-item-emoji">${i.emoji}</span><div><div class="os-item-name">${i.name}</div><div class="os-item-qty">× ${i.qty}</div></div></div><span class="os-item-price">${fmt(i.price*i.qty)}</span></div>`).join('')}</div><div class="os-totals"><div class="os-row"><span>Subtotal</span><span>${fmt(sub)}</span></div><div class="os-row"><span>Envío</span><span>A calcular</span></div><div class="os-row total"><span>Total estimado</span><span>${fmt(sub)}</span></div></div><div style="margin-top:18px;padding:14px;background:var(--gray-bg);border-radius:10px;font-size:13px;color:var(--text-mid);line-height:1.7"><strong style="display:block;margin-bottom:5px;color:var(--brown-dark)">📦 Datos de entrega</strong>${customerData.nombre} · ${customerData.tel}<br>${customerData.calle}, ${customerData.ciudad}, ${customerData.estado} ${customerData.cp}</div><div class="checkout-nav"><button class="co-btn-back" onclick="checkoutStep=1;renderCheckoutStep()">← Editar</button><button class="co-btn-next" onclick="checkoutStep=3;renderCheckoutStep()">Elegir pago →</button></div>`;
+  }else if(checkoutStep===3){
+    document.getElementById('checkoutTitle').textContent='Método de pago';
+    body.innerHTML=`<h3 class="checkout-section-title">¿Cómo quieres pagar?</h3><div class="payment-methods"><div class="pay-method selected" id="pm-transfer" onclick="selectPay('transfer')"><div class="pay-method-header"><input type="radio" name="pay" value="transfer" checked><span class="pay-method-label">Transferencia / SPEI</span><span class="pay-method-icons">🏦</span></div><div class="pay-method-body"><div class="transfer-info"><strong>Datos para transferencia:</strong>Banco: BBVA<br>Titular: Jesús Marbán Romero<br>CLABE: 722969010898405381<br>Concepto: Tu nombre + número de pedido<br><br><em>Envíanos el comprobante por WhatsApp para confirmar.</em></div></div></div><div class="pay-method" id="pm-oxxo" onclick="selectPay('oxxo')"><div class="pay-method-header"><input type="radio" name="pay" value="oxxo"><span class="pay-method-label">Pago en OXXO</span><span class="pay-method-icons">🏪</span></div><div class="pay-method-body"><div class="oxxo-info"><strong>Pago en efectivo en OXXO:</strong>Cuenta: <strong>2242170470188181</strong><br>Paga en cualquier OXXO y envíanos tu comprobante. Tu pedido se procesa en 24 hrs.</div></div></div><div class="pay-method" id="pm-wa" onclick="selectPay('wa')"><div class="pay-method-header"><input type="radio" name="pay" value="wa"><span class="pay-method-label">Coordinar por WhatsApp</span><span class="pay-method-icons">💬</span></div><div class="pay-method-body"><div class="transfer-info"><strong>Coordinación directa:</strong>Confirma tu pedido y te contactamos por WhatsApp para acordar el método de pago más conveniente.</div></div></div></div><div class="checkout-nav"><button class="co-btn-back" onclick="checkoutStep=2;renderCheckoutStep()">← Atrás</button><button class="co-btn-next" onclick="confirmOrder()">✓ Confirmar pedido</button></div>`;
+  }else if(checkoutStep===4){
+    document.getElementById('checkoutTitle').textContent='¡Pedido confirmado!';
     setStepTabs(3);
-    const waMsg = buildWAMessage();
-    body.innerHTML = `
-      <div class="success-screen">
-        <span class="success-icon">🎉</span>
-        <h3>¡Gracias, ${customerData.nombre}!</h3>
-        <p>Tu pedido ha sido recibido. Te contactaremos pronto al número <strong>${customerData.tel}</strong> para confirmar el pago y la fecha de envío.</p>
-        <a class="success-wa" href="https://wa.me/524434929560?text=${encodeURIComponent(waMsg)}" target="_blank">💬 Confirmar por WhatsApp</a>
-        <br><br>
-        <button class="co-btn-back" style="width:100%" onclick="cart=[];updateCartCount();renderCartItems();closeCheckout()">Seguir comprando</button>
-      </div>`;
+    const waMsg=buildWAMessage();
+    body.innerHTML=`<div class="success-screen"><span class="success-icon">🎉</span><h3>¡Gracias, ${customerData.nombre}!</h3><p>Tu pedido fue recibido. Te contactaremos al <strong>${customerData.tel}</strong> para confirmar pago y fecha de envío.</p><a class="success-wa" href="https://wa.me/524434929560?text=${encodeURIComponent(waMsg)}" target="_blank">💬 Confirmar por WhatsApp</a><br><br><button class="co-btn-back" style="width:100%;margin-top:12px" onclick="cart=[];updateCartCount();renderCartItems();closeCheckout()">Seguir comprando</button></div>`;
   }
 }
-
-function goStep2() {
-  const n = v => document.getElementById(v)?.value?.trim();
-  if (!n('coNombre') || !n('coTel') || !n('coCalle') || !n('coCiudad')) {
-    showToast('⚠️ Completa los campos obligatorios'); return;
-  }
-  customerData = { nombre:n('coNombre'), tel:n('coTel'), email:n('coEmail'), calle:n('coCalle'), ciudad:n('coCiudad'), estado:n('coEstado'), cp:n('coCP'), pais:n('coPais')||'México', ref:n('coRef'), privacyAccepted: document.getElementById('coPrivacyConsent')?.checked };
-  checkoutStep = 2; renderCheckoutStep();
+function goStep2(){
+  const n=id=>document.getElementById(id)?.value?.trim();
+  const required=[{id:'coNombre'},{id:'coTel'},{id:'coCalle'},{id:'coCiudad'},{id:'coEstado'}];
+  required.forEach(f=>{const el=document.getElementById(f.id);const err=document.getElementById('err-'+f.id);if(el)el.classList.remove('error');if(err)err.classList.remove('show')});
+  const consent=document.getElementById('coPrivacyConsent');
+  if(consent&&!consent.checked){showToast('⚠️ Acepta el Aviso de Privacidad para continuar');consent.scrollIntoView({behavior:'smooth',block:'center'});return}
+  let firstError=null;
+  required.forEach(f=>{if(!n(f.id)){const el=document.getElementById(f.id);const err=document.getElementById('err-'+f.id);if(el){el.classList.add('error');if(!firstError)firstError=el}if(err)err.classList.add('show')}});
+  if(firstError){firstError.scrollIntoView({behavior:'smooth',block:'center'});firstError.focus();showToast('⚠️ Completa los campos marcados en rojo');return}
+  customerData={nombre:n('coNombre'),tel:n('coTel'),email:n('coEmail'),calle:n('coCalle'),ciudad:n('coCiudad'),estado:n('coEstado'),cp:n('coCP'),pais:n('coPais')||'México',ref:n('coRef'),privacyAccepted:consent?.checked};
+  checkoutStep=2;renderCheckoutStep();
 }
-
-function selectPay(method) {
-  document.querySelectorAll('.pay-method').forEach(el => el.classList.remove('selected'));
-  document.getElementById('pm-'+method).classList.add('selected');
-  document.querySelectorAll('.pay-method input[type=radio]').forEach(r => r.checked = r.value === method);
-}
-
-function buildWAMessage() {
-  const items = cart.map(i => `• ${i.emoji} ${i.name} x${i.qty} = ${fmt(i.price*i.qty)}`).join('\n');
+function selectPay(m){document.querySelectorAll('.pay-method').forEach(el=>el.classList.remove('selected'));document.getElementById('pm-'+m).classList.add('selected');document.querySelectorAll('.pay-method input[type=radio]').forEach(r=>r.checked=r.value===m)}
+function buildWAMessage(){
+  const items=cart.map(i=>`• ${i.emoji} ${i.name} x${i.qty} = ${fmt(i.price*i.qty)}`).join('\n');
   return `¡Hola! Realicé un pedido en su página web 🛒\n\n*PEDIDO:*\n${items}\n\n*Total: ${fmt(cartTotal())}*\n\n*Datos de entrega:*\nNombre: ${customerData.nombre}\nTeléfono: ${customerData.tel}\nDirección: ${customerData.calle}, ${customerData.ciudad}, ${customerData.estado} ${customerData.cp}`;
 }
-
-function confirmOrder() {
-  checkoutStep = 4; renderCheckoutStep();
+function confirmOrder(){checkoutStep=4;renderCheckoutStep()}
+function orderByWA(){
+  if(cart.length===0){showToast('Tu carrito está vacío');return}
+  const items=cart.map(i=>`• ${i.emoji} ${i.name} x${i.qty} (${fmt(i.price*i.qty)})`).join('\n');
+  window.open(`https://wa.me/524434929560?text=${encodeURIComponent(`¡Hola! Quiero hacer este pedido:\n\n${items}\n\nTotal: ${fmt(cartTotal())}`)}`, '_blank');
 }
-
-function orderByWA() {
-  if (cart.length === 0) { showToast('Tu carrito está vacío'); return; }
-  const items = cart.map(i => `• ${i.emoji} ${i.name} x${i.qty} (${fmt(i.price*i.qty)})`).join('\n');
-  const msg = `¡Hola! Quiero hacer este pedido:\n\n${items}\n\nTotal: ${fmt(cartTotal())}`;
-  window.open(`https://wa.me/524434929560?text=${encodeURIComponent(msg)}`, '_blank');
-}
-
-function sendWA() {
-  const nombre = document.getElementById('ctaNombre').value || 'Cliente';
-  const producto = document.getElementById('ctaProd').value || 'un producto';
-  const msg = document.getElementById('ctaMsg').value || '';
+function sendWA(){
+  const nombre=document.getElementById('ctaNombre').value||'Cliente';
+  const producto=document.getElementById('ctaProd').value||'un producto';
+  const msg=document.getElementById('ctaMsg').value||'';
   window.open(`https://wa.me/524434929560?text=${encodeURIComponent(`Hola! Soy ${nombre}. Me interesa: ${producto}. ${msg}`)}`, '_blank');
 }
 
-// ── PRIVACY & COOKIES ──
-const privacyContent = {
-  aviso: {
-    title: 'Aviso de Privacidad',
-    html: `
-      <p class="last-update">Última actualización: julio 2026</p>
-      <div class="highlight-box">En cumplimiento con la <strong>Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)</strong> de México, ponemos a tu disposición el presente Aviso de Privacidad.</div>
-      <h3>1. Responsable del tratamiento</h3>
-      <p><strong>Que Bonita Vela</strong> (en adelante "el Responsable") con domicilio en Michoacán, México, es responsable del tratamiento de tus datos personales.</p>
-      <h3>2. Datos personales que recabamos</h3>
-      <p>Para las finalidades señaladas en este aviso, podemos recabar los siguientes datos:</p>
-      <ul>
-        <li>Nombre completo</li>
-        <li>Número de teléfono / WhatsApp</li>
-        <li>Correo electrónico</li>
-        <li>Domicilio de entrega (calle, número, ciudad, estado, código postal)</li>
-      </ul>
-      <h3>3. Finalidades del tratamiento</h3>
-      <p>Tus datos personales serán utilizados para las siguientes finalidades <strong>primarias</strong>:</p>
-      <ul>
-        <li>Procesar y confirmar tus pedidos de compra</li>
-        <li>Coordinar el envío y entrega de tus productos</li>
-        <li>Atender dudas, aclaraciones o reclamaciones sobre tu pedido</li>
-        <li>Gestionar devoluciones o cambios según nuestra política</li>
-      </ul>
-      <p>Finalidades <strong>secundarias</strong> (puedes oponerte en cualquier momento):</p>
-      <ul>
-        <li>Enviarte promociones, descuentos y novedades de productos</li>
-        <li>Realizar encuestas de satisfacción</li>
-      </ul>
-      <h3>4. Transferencia de datos</h3>
-      <p>Tus datos <strong>no serán vendidos, cedidos ni transferidos</strong> a terceros sin tu consentimiento, salvo en los casos previstos por la ley o cuando sea necesario para la entrega de tu pedido (paqueterías).</p>
-      <h3>5. Derechos ARCO</h3>
-      <p>Tienes derecho a <strong>Acceder, Rectificar, Cancelar u Oponerte</strong> al tratamiento de tus datos personales. Para ejercer estos derechos, escríbenos por WhatsApp o a través del formulario de contacto en esta página.</p>
-      <h3>6. Seguridad</h3>
-      <p>Implementamos medidas de seguridad administrativas y técnicas para proteger tus datos personales contra daño, pérdida, alteración, destrucción o uso no autorizado.</p>
-      <h3>7. Cambios al aviso</h3>
-      <p>Cualquier modificación a este aviso será publicada en esta misma página. Te recomendamos revisarlo periódicamente.</p>
-      <h3>8. Contacto</h3>
-      <p>Para cualquier duda sobre este aviso escríbenos por WhatsApp al número indicado en la sección de contacto de esta página.</p>`
-  },
-  terminos: {
-    title: 'Términos y Condiciones',
-    html: `
-      <p class="last-update">Última actualización: julio 2026</p>
-      <div class="highlight-box">Al realizar una compra en <strong>Que Bonita Vela</strong> aceptas los siguientes términos y condiciones. Léelos con atención antes de hacer tu pedido.</div>
-      <h3>1. Aceptación</h3>
-      <p>El uso de esta tienda y la realización de cualquier pedido implica la aceptación plena de estos Términos y Condiciones.</p>
-      <h3>2. Productos</h3>
-      <ul>
-        <li>Todos nuestros productos son artesanales y pueden presentar pequeñas variaciones entre sí, lo cual es parte de su esencia artesanal.</li>
-        <li>Las fotografías son referenciales; el color exacto puede variar ligeramente según el monitor o pantalla.</li>
-        <li>Nos reservamos el derecho de modificar precios sin previo aviso.</li>
-      </ul>
-      <h3>3. Pedidos</h3>
-      <ul>
-        <li>Los pedidos se confirman una vez recibido el pago o comprobante de pago.</li>
-        <li>Nos comunicaremos contigo por WhatsApp para confirmar disponibilidad, tiempo de elaboración y costo de envío.</li>
-        <li>Para pedidos personalizados o en cantidades mayores, los tiempos de producción pueden variar.</li>
-      </ul>
-      <h3>4. Precios y pagos</h3>
-      <ul>
-        <li>Todos los precios están expresados en pesos mexicanos (MXN) e incluyen IVA.</li>
-        <li>Aceptamos transferencia bancaria (SPEI), pago en OXXO y otros métodos acordados por WhatsApp.</li>
-        <li>El pago debe realizarse antes de que tu pedido entre a producción o se envíe.</li>
-      </ul>
-      <h3>5. Propiedad intelectual</h3>
-      <p>Todos los diseños, fotografías, textos y elementos de esta tienda son propiedad de Que Bonita Vela. Queda prohibida su reproducción sin autorización expresa.</p>
-      <h3>6. Limitación de responsabilidad</h3>
-      <p>No nos hacemos responsables por daños ocasionados por uso inadecuado de los productos, ni por demoras causadas por paqueterías una vez que el pedido fue despachado.</p>
-      <h3>7. Legislación aplicable</h3>
-      <p>Estos términos se rigen por las leyes de los Estados Unidos Mexicanos. Cualquier controversia será resuelta en los tribunales competentes del estado de Michoacán.</p>`
-  },
-  envios: {
-    title: 'Política de Envíos',
-    html: `
-      <p class="last-update">Última actualización: julio 2026</p>
-      <div class="highlight-box">Enviamos a toda la República Mexicana. Lee nuestra política de envíos para conocer tiempos, costos y condiciones.</div>
-      <h3>1. Cobertura</h3>
-      <p>Realizamos envíos a toda la <strong>República Mexicana</strong>. Para zonas de difícil acceso o extendidas, el costo puede variar.</p>
-      <h3>2. Tiempos de elaboración</h3>
-      <ul>
-        <li><strong>Productos en existencia:</strong> 1 a 3 días hábiles para preparar tu pedido.</li>
-        <li><strong>Productos personalizados:</strong> 3 a 7 días hábiles según la complejidad del diseño.</li>
-        <li>Te informaremos el tiempo exacto al confirmar tu pedido por WhatsApp.</li>
-      </ul>
-      <h3>3. Tiempos de entrega</h3>
-      <ul>
-        <li><strong>Ciudades principales:</strong> 2 a 4 días hábiles después del despacho.</li>
-        <li><strong>Zonas foráneas:</strong> 4 a 8 días hábiles.</li>
-        <li>Los tiempos son estimados y pueden variar según la paquetería y tu ubicación.</li>
-      </ul>
-      <h3>4. Costo de envío</h3>
-      <p>El costo de envío se calcula según el peso, dimensiones del paquete y tu destino. Te informamos el costo exacto antes de confirmar tu pedido. En compras mayores a cierto monto (a convenir), el envío puede ser gratuito.</p>
-      <h3>5. Rastreo del pedido</h3>
-      <p>Una vez despachado tu pedido, te enviamos el número de guía por WhatsApp para que puedas rastrear tu envío en tiempo real.</p>
-      <h3>6. Embalaje</h3>
-      <p>Todos nuestros productos son empacados cuidadosamente para protegerlos durante el transporte. En caso de que lleguen dañados por el manejo de la paquetería, contáctanos de inmediato con fotografías del daño.</p>
-      <h3>7. Responsabilidad</h3>
-      <p>Una vez que el pedido es entregado a la paquetería, la responsabilidad de la entrega recae en la empresa de mensajería. Sin embargo, te apoyamos en cualquier aclaración o reclamación.</p>`
-  },
-  devoluciones: {
-    title: 'Política de Devoluciones y Cambios',
-    html: `
-      <p class="last-update">Última actualización: julio 2026</p>
-      <div class="highlight-box">Tu satisfacción es lo más importante. Si tienes algún problema con tu pedido, estamos aquí para ayudarte.</div>
-      <h3>1. Plazo para solicitar devolución o cambio</h3>
-      <p>Tienes hasta <strong>5 días naturales</strong> después de recibir tu pedido para reportar cualquier problema e iniciar una solicitud de cambio o devolución.</p>
-      <h3>2. Causas aceptadas para devolución</h3>
-      <ul>
-        <li>Producto defectuoso de fábrica o con daño evidente</li>
-        <li>Producto incorrecto (distinto al que pediste)</li>
-        <li>Daño causado durante el transporte (con evidencia fotográfica)</li>
-      </ul>
-      <h3>3. Causas NO aceptadas</h3>
-      <ul>
-        <li>Variaciones menores en color o textura propias de la artesanía</li>
-        <li>Daños causados por uso inadecuado del producto</li>
-        <li>Arrepentimiento de compra en productos personalizados</li>
-        <li>Solicitudes fuera del plazo de 5 días</li>
-      </ul>
-      <h3>4. Proceso de devolución</h3>
-      <ul>
-        <li>Contáctanos por WhatsApp con fotos del producto y tu número de pedido.</li>
-        <li>Evaluaremos tu caso en máximo 48 horas hábiles.</li>
-        <li>Si procede, te indicamos cómo enviar el producto de regreso.</li>
-        <li>El reembolso o cambio se realiza en máximo 10 días hábiles tras recibir el producto.</li>
-      </ul>
-      <h3>5. Costo del envío de devolución</h3>
-      <p>Si la devolución es por causa nuestra (producto defectuoso o incorrecto), cubrimos el costo del envío de regreso. Si es por otra razón, el cliente cubre el costo de envío.</p>
-      <h3>6. Reembolsos</h3>
-      <p>Los reembolsos se realizan por el mismo medio de pago utilizado originalmente o mediante transferencia bancaria, según se acuerde.</p>`
-  },
-  cookies: {
-    title: 'Política de Cookies',
-    html: `
-      <p class="last-update">Última actualización: julio 2026</p>
-      <div class="highlight-box">Esta página utiliza cookies y tecnologías similares para mejorar tu experiencia de navegación.</div>
-      <h3>¿Qué son las cookies?</h3>
-      <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Nos ayudan a recordar tus preferencias y mejorar el funcionamiento de la tienda.</p>
-      <h3>Tipos de cookies que usamos</h3>
-      <ul>
-        <li><strong>Cookies esenciales:</strong> Necesarias para que la tienda funcione correctamente (carrito de compras, sesión). No pueden desactivarse.</li>
-        <li><strong>Cookies de preferencias:</strong> Recuerdan tus configuraciones (idioma, filtros seleccionados).</li>
-        <li><strong>Cookies analíticas:</strong> Nos ayudan a entender cómo navegas por la tienda para mejorar la experiencia (Google Analytics u similar).</li>
-      </ul>
-      <h3>¿Cómo controlar las cookies?</h3>
-      <p>Puedes configurar tu navegador para rechazar o eliminar cookies en cualquier momento. Ten en cuenta que desactivar ciertas cookies puede afectar el funcionamiento de la tienda.</p>
-      <ul>
-        <li><strong>Chrome:</strong> Configuración → Privacidad → Cookies</li>
-        <li><strong>Safari:</strong> Preferencias → Privacidad</li>
-        <li><strong>Firefox:</strong> Opciones → Privacidad y Seguridad</li>
-      </ul>
-      <h3>Tu consentimiento</h3>
-      <p>Al hacer clic en "Aceptar todas" en el banner de cookies, consientes el uso de todas las cookies descritas. Puedes elegir "Solo esenciales" para limitar el uso a las cookies estrictamente necesarias.</p>
-      <h3>Más información</h3>
-      <p>Para cualquier pregunta sobre nuestra política de cookies, contáctanos por WhatsApp o a través del formulario de contacto.</p>`
-  }
+// ── PRIVACY ──
+const privacyContent={
+  aviso:{title:'Aviso de Privacidad',html:`<p class="last-update">Última actualización: julio 2026</p><div class="highlight-box">En cumplimiento con la <strong>Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)</strong> de México.</div><h3>1. Responsable del tratamiento</h3><p><strong>Que Bonita Vela</strong>, con domicilio en Michoacán, México, es responsable del tratamiento de tus datos personales.</p><h3>2. Datos personales que recabamos</h3><ul><li>Nombre completo</li><li>Número de teléfono / WhatsApp</li><li>Correo electrónico</li><li>Domicilio de entrega</li></ul><h3>3. Finalidades del tratamiento</h3><p>Tus datos se utilizan para procesar pedidos, coordinar envíos y atender dudas. De forma secundaria, para enviarte promociones (puedes oponerte en cualquier momento).</p><h3>4. Transferencia de datos</h3><p>Tus datos <strong>no serán vendidos ni transferidos</strong> a terceros sin tu consentimiento, salvo para gestionar la entrega de tu pedido.</p><h3>5. Derechos ARCO</h3><p>Puedes <strong>Acceder, Rectificar, Cancelar u Oponerte</strong> al tratamiento de tus datos escribiéndonos por WhatsApp.</p>`},
+  terminos:{title:'Términos y Condiciones',html:`<p class="last-update">Última actualización: julio 2026</p><div class="highlight-box">Al realizar una compra en <strong>Que Bonita Vela</strong> aceptas los siguientes términos.</div><h3>1. Productos</h3><p>Todos nuestros productos son artesanales y pueden presentar pequeñas variaciones. Los precios están en pesos mexicanos (MXN).</p><h3>2. Pedidos</h3><p>Los pedidos se confirman una vez recibido el pago. Para personalizados, los tiempos de producción pueden variar.</p><h3>3. Pagos</h3><p>Aceptamos transferencia SPEI, pago en OXXO y otros métodos acordados por WhatsApp.</p><h3>4. Propiedad intelectual</h3><p>Todos los diseños y fotografías son propiedad de Que Bonita Vela.</p>`},
+  envios:{title:'Política de Envíos',html:`<p class="last-update">Última actualización: julio 2026</p><div class="highlight-box">Enviamos a toda la <strong>República Mexicana</strong>.</div><h3>Tiempos de elaboración</h3><ul><li>Productos en stock: 1-3 días hábiles</li><li>Productos personalizados: 3-7 días hábiles</li></ul><h3>Tiempos de entrega</h3><ul><li>Ciudades principales: 2-4 días hábiles</li><li>Zonas foráneas: 4-8 días hábiles</li></ul><h3>Rastreo</h3><p>Te enviamos número de guía por WhatsApp para rastreo en tiempo real.</p>`},
+  devoluciones:{title:'Política de Devoluciones',html:`<p class="last-update">Última actualización: julio 2026</p><div class="highlight-box">Tienes hasta <strong>5 días naturales</strong> después de recibir tu pedido para reportar cualquier problema.</div><h3>Causas aceptadas</h3><ul><li>Producto defectuoso de fábrica</li><li>Producto incorrecto</li><li>Daño durante el transporte (con evidencia fotográfica)</li></ul><h3>Causas NO aceptadas</h3><ul><li>Variaciones menores propias de la artesanía</li><li>Daños por uso inadecuado</li><li>Solicitudes fuera del plazo de 5 días</li></ul>`},
+  cookies:{title:'Política de Cookies',html:`<p class="last-update">Última actualización: julio 2026</p><h3>¿Qué son las cookies?</h3><p>Las cookies son archivos que mejoran tu experiencia de navegación en nuestra tienda.</p><h3>Tipos que usamos</h3><ul><li><strong>Esenciales:</strong> Necesarias para el carrito y la sesión</li><li><strong>Analíticas:</strong> Para entender cómo navegas y mejorar la tienda</li></ul><h3>Tu control</h3><p>Puedes aceptar todas las cookies o solo las esenciales desde el banner de cookies.</p>`}
 };
-
-let currentPrivacySection = 'aviso';
-
-function openPrivacy(section) {
-  currentPrivacySection = section || 'aviso';
-  const content = privacyContent[currentPrivacySection];
-  document.getElementById('privacyTitle').textContent = content.title;
-  document.getElementById('privacyBody').innerHTML = content.html;
-  // update tabs
-  document.querySelectorAll('.privacy-tab').forEach((tab, i) => {
-    const keys = ['aviso','terminos','envios','devoluciones','cookies'];
-    tab.classList.toggle('active', keys[i] === currentPrivacySection);
-  });
+let currentPrivacySection='aviso';
+function openPrivacy(section){
+  currentPrivacySection=section||'aviso';
+  const content=privacyContent[currentPrivacySection];
+  document.getElementById('privacyTitle').textContent=content.title;
+  document.getElementById('privacyBody').innerHTML=content.html;
+  document.querySelectorAll('.privacy-tab').forEach((tab,i)=>{const keys=['aviso','terminos','envios','devoluciones','cookies'];tab.classList.toggle('active',keys[i]===currentPrivacySection)});
   document.getElementById('privacyOverlay').classList.add('open');
 }
-
-function closePrivacy() {
-  document.getElementById('privacyOverlay').classList.remove('open');
-}
-
-function closePrivacyOutside(e) {
-  if (e.target.id === 'privacyOverlay') closePrivacy();
-}
-
-function acceptCookies() {
-  document.getElementById('cookieBanner').classList.add('hidden');
-  localStorage.setItem('qbv_cookies', 'accepted');
-}
-
-function rejectCookies() {
-  document.getElementById('cookieBanner').classList.add('hidden');
-  localStorage.setItem('qbv_cookies', 'essential');
-}
-
-// Check cookie consent on load
-if (localStorage.getItem('qbv_cookies')) {
-  document.getElementById('cookieBanner').classList.add('hidden');
-}
-
-// Add privacy consent to checkout step 1
-const _origGoStep2 = goStep2;
-function goStep2() {
-  const consent = document.getElementById('coPrivacyConsent');
-  if (consent && !consent.checked) {
-    showToast('⚠️ Debes aceptar el Aviso de Privacidad para continuar');
-    return;
-  }
-  _origGoStep2();
-}
-
-function searchProducts(query) {
-  const q = query.trim().toLowerCase();
-  const countEl = document.getElementById('searchCount');
-  // Reset filters visually
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.filter-btn')[0].classList.add('active');
-  if (!q) {
-    renderProducts('all');
-    countEl.textContent = '';
-    return;
-  }
-  const keywords = q.split(' ').filter(Boolean);
-  const filtered = products.filter(p => {
-    const haystack = `${p.name} ${p.cat} ${p.desc} ${p.badge}`.toLowerCase();
-    return keywords.every(k => haystack.includes(k));
-  });
-  const grid = document.getElementById('productGrid');
-  if (filtered.length === 0) {
-    grid.innerHTML = `<div class="no-results" style="grid-column:1/-1"><span>🔍</span>No encontramos productos para "<strong>${query}</strong>".<br>Intenta con otra palabra o <a href="#contacto" style="color:var(--black)">escríbenos</a> y te ayudamos.</div>`;
-    countEl.textContent = 'Sin resultados';
-    return;
-  }
-  grid.innerHTML = filtered.map(p => `
-    <div class="product-card">
-      <div class="product-img">
-        <div class="product-img-inner">${p.emoji}</div>
-        ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-      </div>
-      <div class="product-info">
-        <p class="product-cat">${p.cat}</p>
-        <p class="product-name">${p.name}</p>
-        <div class="product-footer">
-          <span class="product-price">${fmt(p.price)}</span>
-        </div>
-        <button class="add-to-cart-btn" onclick="addToCart(${p.id}, this)">+ Agregar al carrito</button>
-      </div>
-    </div>
-  `).join('');
-  countEl.textContent = `${filtered.length} producto${filtered.length !== 1 ? 's' : ''} encontrado${filtered.length !== 1 ? 's' : ''}`;
-}
-
-function navSearch(query) {
-  // Sync with main search bar
-  const mainInput = document.getElementById('searchInput');
-  if (mainInput) mainInput.value = query;
-  searchProducts(query);
-}
+function closePrivacy(){document.getElementById('privacyOverlay').classList.remove('open')}
+function closePrivacyOutside(e){if(e.target.id==='privacyOverlay')closePrivacy()}
+function acceptCookies(){document.getElementById('cookieBanner').classList.add('hidden');localStorage.setItem('qbv_cookies','accepted')}
+function rejectCookies(){document.getElementById('cookieBanner').classList.add('hidden');localStorage.setItem('qbv_cookies','essential')}
+if(localStorage.getItem('qbv_cookies'))document.getElementById('cookieBanner').classList.add('hidden');
 
 // INIT
 renderProducts('all');
